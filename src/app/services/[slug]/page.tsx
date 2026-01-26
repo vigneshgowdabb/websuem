@@ -89,7 +89,8 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
+export default async function ServicePage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     const service = services[params.slug as keyof typeof services];
 
     if (!service) {

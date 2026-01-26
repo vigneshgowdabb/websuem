@@ -66,7 +66,8 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     const project = projects[params.slug as keyof typeof projects];
 
     if (!project) {
