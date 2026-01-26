@@ -7,7 +7,7 @@ const services = [
         title: "Website Development",
         description: "Custom websites that convert visitors into customers.",
         icon: Globe,
-        href: "/services#web",
+        href: "/services/web",
         color: "bg-lavender", // Light purple background
         colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
     },
@@ -15,7 +15,7 @@ const services = [
         title: "Social Media",
         description: "Content that builds brands.",
         icon: Share2,
-        href: "/services#social",
+        href: "/services/social",
         color: "bg-cream", // Warm cream background
         colSpan: "col-span-1 md:col-span-1",
     },
@@ -23,7 +23,7 @@ const services = [
         title: "Brand Identity",
         description: "Logos & visual distinctiveness.",
         icon: Palette,
-        href: "/services#branding",
+        href: "/services/branding",
         color: "bg-soft-pink", // Soft pink background
         colSpan: "col-span-1 md:col-span-1",
     },
@@ -31,7 +31,7 @@ const services = [
         title: "AI Automation",
         description: "Save 10+ hours weekly with custom workflows.",
         icon: Zap,
-        href: "/services#automation",
+        href: "/services/automation",
         color: "bg-mint", // Mint green background
         colSpan: "col-span-1 md:col-span-2",
     },

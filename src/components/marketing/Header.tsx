@@ -24,14 +24,18 @@ export function Header() {
           <Link href="/about" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
             About
           </Link>
+          <Link href="/contact" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
+            Contact
+          </Link>
         </nav>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-           {/* Placeholder for now, will replace with proper UI component later */}
-           <button className="bg-vibrant-yellow text-deep-purple font-semibold py-2 px-6 rounded-lg hover:shadow-glow transition-all duration-300">
-             Book a Call
-           </button>
+          <Link href="/contact">
+            <Button className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 font-bold">
+              Book a Call
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle (Placeholder) */}

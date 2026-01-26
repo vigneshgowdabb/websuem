@@ -1,4 +1,5 @@
 import { Header } from "@/components/marketing/Header";
+import Link from "next/link";
 import { Footer } from "@/components/marketing/Footer";
 import { Services } from "@/components/marketing/Services";
 import { Button } from "@/components/ui/button";
@@ -34,11 +35,11 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0" style={{ animationDelay: "0.6s" }}>
-                <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow text-base font-bold min-w-[180px]">
-                  Book a Free Call →
+                <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow text-base font-bold min-w-[180px]" asChild>
+                  <Link href="/contact">Book a Free Call →</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-deep-purple text-deep-purple hover:bg-deep-purple hover:text-white text-base font-semibold min-w-[180px]">
-                  View Our Work
+                <Button size="lg" variant="outline" className="border-deep-purple text-deep-purple hover:bg-deep-purple hover:text-white text-base font-semibold min-w-[180px]" asChild>
+                  <Link href="/portfolio">View Our Work</Link>
                 </Button>
               </div>
             </div>

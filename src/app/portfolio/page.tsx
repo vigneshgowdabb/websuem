@@ -1,4 +1,5 @@
 import { Header } from "@/components/marketing/Header";
+import Link from "next/link";
 import { Footer } from "@/components/marketing/Footer";
 import { ProjectCard } from "@/components/marketing/ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -68,8 +69,8 @@ export default function PortfolioPage() {
                         <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
                             We'd love to help you build something amazing. Let's discuss your goals and how we can achieve them.
                         </p>
-                        <Button size="lg" className="bg-deep-purple text-white hover:bg-deep-purple/90 h-auto py-4 px-10 text-lg rounded-xl">
-                            Start a Project
+                        <Button size="lg" className="bg-deep-purple text-white hover:bg-deep-purple/90 h-auto py-4 px-10 text-lg rounded-xl" asChild>
+                            <Link href="/contact">Start a Project</Link>
                         </Button>
                     </div>
                 </div>
