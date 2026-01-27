@@ -56,22 +56,22 @@ export default async function DashboardPage() {
                 <StatsCard
                     title="Total Leads"
                     value={leadCount || 0}
-                    icon={Users}
+                    icon={<Users className="w-5 h-5 text-deep-purple" />}
                 />
                 <StatsCard
                     title="Clients"
                     value={clientCount || 0}
-                    icon={Building2}
+                    icon={<Building2 className="w-5 h-5 text-deep-purple" />}
                 />
                 <StatsCard
                     title="Bookings"
                     value={bookingCount || 0}
-                    icon={Calendar}
+                    icon={<Calendar className="w-5 h-5 text-deep-purple" />}
                 />
                 <StatsCard
                     title="Revenue"
                     value={formatCurrency(totalRevenue)}
-                    icon={DollarSign}
+                    icon={<DollarSign className="w-5 h-5 text-deep-purple" />}
                 />
             </div>
 

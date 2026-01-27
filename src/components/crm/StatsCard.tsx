@@ -1,13 +1,13 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import type { LucideIcon } from 'lucide-react'
+
 
 interface StatsCardProps {
   title: string
   value: string | number
   description?: string
-  icon?: LucideIcon
+  icon?: React.ReactNode
   trend?: {
     value: number
     label: string
@@ -19,7 +19,7 @@ export function StatsCard({
   title,
   value,
   description,
-  icon: Icon,
+  icon,
   trend,
   className,
 }: StatsCardProps) {
@@ -40,9 +40,9 @@ export function StatsCard({
             <p className="text-xs text-gray-400">{description}</p>
           )}
         </div>
-        {Icon && (
+        {icon && (
           <div className="p-2 bg-lavender rounded-lg">
-            <Icon className="w-5 h-5 text-deep-purple" />
+            {icon}
           </div>
         )}
       </div>
