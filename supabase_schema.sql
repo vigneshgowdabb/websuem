@@ -41,5 +41,36 @@ create policy "Allow public read bookings" on bookings for select using (true);
 -- SEED DATA (Optional)
 insert into leads (name, email, company, service_interested, status)
 values 
-('Alice Johnson', 'alice@techstart.com', 'TechStart', 'web', 'new'),
 ('Bob Smith', 'bob@consulting.com', 'Smith Consulting', 'branding', 'contacted');
+
+-- CLIENTS TABLE
+create table if not exists clients (
+  id uuid default uuid_generate_v4() primary key,
+  name text not null,
+  company text,
+  email text,
+  status text default 'active',
+  total_revenue numeric default 0,
+  last_project_date timestamp with time zone,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- CRM USERS TABLE (Profiles for dashboard access)
+create table if not exists crm_users (
+  id uuid references auth.users on delete cascade primary key,
+  full_name text,
+  avatar_url text,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- ENABLE RLS
+alter table clients enable row level security;
+alter table crm_users enable row level security;
+
+-- POLICIES
+-- Clients: Allow public read/write for now (Demo Purpose)
+create policy "Allow public access clients" on clients for all using (true) with check (true);
+
+-- CRM Users: Users can only read/update their own profile
+create policy "Users can view own profile" on crm_users for select using (auth.uid() = id);
+create policy "Users can update own profile" on crm_users for update using (auth.uid() = id);

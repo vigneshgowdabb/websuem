@@ -26,14 +26,13 @@ export interface Booking {
   id: string;
   lead_id?: string;
   title: string;
-  datetime: string;
-  duration_minutes: number;
+  start_time: string;
+  end_time: string;
   type?: BookingType;
   status: BookingStatus;
   meeting_link?: string;
   notes?: string;
   created_at: string;
-  updated_at: string;
   lead?: Lead;
 }
 

@@ -1,49 +1,78 @@
-import { Users, Calendar, DollarSign, TrendingUp } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase";
+import { Users, Calendar, DollarSign, Building2 } from "lucide-react"
+import { createClient } from "@/lib/supabase/server"
+import { StatsCard } from "@/components/crm/StatsCard"
+import { StatusBadge } from "@/components/crm/StatusBadge"
+import { BookingCard } from "@/components/crm/BookingCard"
+import Link from "next/link"
+import { format } from "date-fns"
 
 export default async function DashboardPage() {
-    const supabase = createClient();
+    const supabase = await createClient()
 
     // Fetch Stats
-    const { count: leadCount } = await supabase.from('leads').select('*', { count: 'exact', head: true });
-    const { count: bookingCount } = await supabase.from('bookings').select('*', { count: 'exact', head: true });
+    const { count: leadCount } = await supabase.from('leads').select('*', { count: 'exact', head: true })
+    const { count: clientCount } = await supabase.from('clients').select('*', { count: 'exact', head: true })
+    const { count: bookingCount } = await supabase.from('bookings').select('*', { count: 'exact', head: true })
 
-    // For demo purposes, we'll keep revenue hardcoded as we don't have a payments table yet
-    const stats = [
-        { name: "Total Leads", value: leadCount?.toString() || "0", change: "Real-time", icon: Users, color: "bg-lavender text-deep-purple" },
-        { name: "Active Projects", value: "3", change: "Fixed", icon: TrendingUp, color: "bg-baltic-sea text-deep-purple" },
-        { name: "Bookings", value: bookingCount?.toString() || "0", change: "Real-time", icon: Calendar, color: "bg-cream text-deep-purple" },
-        { name: "Revenue", value: "$4,200", change: "+18%", icon: DollarSign, color: "bg-mint text-emerald-800" },
-    ];
+    // Fetch total revenue from clients
+    const { data: clientsRevenue } = await supabase.from('clients').select('total_revenue')
+    const totalRevenue = clientsRevenue?.reduce((sum, c) => sum + (c.total_revenue || 0), 0) || 0
 
     // Fetch Recent Leads
     const { data: recentLeads } = await supabase
         .from('leads')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(5);
+        .limit(5)
+
+    // Fetch Upcoming Bookings
+    const now = new Date().toISOString()
+    const { data: upcomingBookings } = await supabase
+        .from('bookings')
+        .select('*, lead:leads(*)')
+        .gte('start_time', now)
+        .eq('status', 'scheduled')
+        .order('start_time', { ascending: true })
+        .limit(3)
+
+    const formatCurrency = (amount: number) => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(amount)
+    }
 
     return (
         <div>
             <div className="mb-8">
                 <h2 className="text-2xl font-bold font-heading text-deep-purple">Overview</h2>
-                <p className="text-gray-500">Welcome back! Here's what's happening today.</p>
+                <p className="text-gray-500">Welcome back! Here&apos;s what&apos;s happening today.</p>
             </div>
 
+            {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {stats.map((stat) => (
-                    <div key={stat.name} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                        <div className="flex items-center justify-between mb-4">
-                            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center", stat.color)}>
-                                <stat.icon className="w-5 h-5" />
-                            </div>
-                            <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">{stat.change}</span>
-                        </div>
-                        <div className="text-3xl font-bold font-heading text-deep-purple mb-1">{stat.value}</div>
-                        <div className="text-sm text-gray-500 font-medium">{stat.name}</div>
-                    </div>
-                ))}
+                <StatsCard
+                    title="Total Leads"
+                    value={leadCount || 0}
+                    icon={Users}
+                />
+                <StatsCard
+                    title="Clients"
+                    value={clientCount || 0}
+                    icon={Building2}
+                />
+                <StatsCard
+                    title="Bookings"
+                    value={bookingCount || 0}
+                    icon={Calendar}
+                />
+                <StatsCard
+                    title="Revenue"
+                    value={formatCurrency(totalRevenue)}
+                    icon={DollarSign}
+                />
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
@@ -51,7 +80,12 @@ export default async function DashboardPage() {
                 <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                     <div className="flex items-center justify-between mb-6">
                         <h3 className="font-bold text-lg font-heading">Recent Leads</h3>
-                        <span className="text-xs text-gray-400">Syncing from 'leads' table</span>
+                        <Link
+                            href="/dashboard/leads"
+                            className="text-sm text-vibrant-yellow hover:underline"
+                        >
+                            View all
+                        </Link>
                     </div>
 
                     <div className="overflow-x-auto">
@@ -75,18 +109,19 @@ export default async function DashboardPage() {
                                     recentLeads?.map((lead) => (
                                         <tr key={lead.id} className="group hover:bg-gray-50 transition-colors">
                                             <td className="py-4">
-                                                <div className="font-bold text-deep-purple">{lead.name}</div>
-                                                <div className="text-xs text-gray-400">{lead.email}</div>
+                                                <Link href={`/dashboard/leads/${lead.id}`}>
+                                                    <div className="font-bold text-deep-purple">{lead.name}</div>
+                                                    <div className="text-xs text-gray-400">{lead.email}</div>
+                                                </Link>
                                             </td>
-                                            <td className="py-4 text-sm text-gray-600 capitalize">{lead.service_interested || 'General'}</td>
+                                            <td className="py-4 text-sm text-gray-600 capitalize">
+                                                {lead.service_interested?.replace('_', ' ') || 'General'}
+                                            </td>
                                             <td className="py-4">
-                                                <span className={`inline-flex items-center px-2 py-1 text-xs font-bold rounded-full ${lead.status === 'new' ? 'bg-mint text-green-800' : 'bg-lavender text-deep-purple'
-                                                    }`}>
-                                                    {lead.status}
-                                                </span>
+                                                <StatusBadge status={lead.status} />
                                             </td>
                                             <td className="py-4 text-sm text-gray-500">
-                                                {new Date(lead.created_at).toLocaleDateString()}
+                                                {format(new Date(lead.created_at), 'MMM d, yyyy')}
                                             </td>
                                         </tr>
                                     ))
@@ -98,22 +133,39 @@ export default async function DashboardPage() {
 
                 {/* Upcoming Bookings */}
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                    <h3 className="font-bold text-lg font-heading mb-6">Upcoming Calls</h3>
+                    <div className="flex items-center justify-between mb-6">
+                        <h3 className="font-bold text-lg font-heading">Upcoming Calls</h3>
+                        <Link
+                            href="/dashboard/bookings"
+                            className="text-sm text-vibrant-yellow hover:underline"
+                        >
+                            View all
+                        </Link>
+                    </div>
                     <div className="space-y-4">
-                        {/* Static placeholder for now until we have real bookings */}
-                        <div className="flex gap-4 p-4 rounded-xl border border-gray-50 hover:border-vibrant-yellow/50 transition-colors">
-                            <div className="flex-shrink-0 w-12 text-center">
-                                <div className="text-xs text-gray-400 uppercase font-bold">Today</div>
-                                <div className="text-xl font-bold text-deep-purple">--</div>
+                        {upcomingBookings?.length === 0 ? (
+                            <div className="flex gap-4 p-4 rounded-xl border border-gray-50 text-center">
+                                <div className="flex-1">
+                                    <div className="text-sm text-gray-400">No upcoming calls</div>
+                                    <Link
+                                        href="/dashboard/bookings/schedule"
+                                        className="text-xs text-vibrant-yellow hover:underline"
+                                    >
+                                        Schedule a meeting
+                                    </Link>
+                                </div>
                             </div>
-                            <div>
-                                <div className="font-bold text-deep-purple text-sm">No upcoming calls</div>
-                                <div className="text-xs text-gray-500 mb-1">Bookings table is empty</div>
-                            </div>
-                        </div>
+                        ) : (
+                            upcomingBookings?.map((booking) => (
+                                <BookingCard
+                                    key={booking.id}
+                                    booking={booking}
+                                />
+                            ))
+                        )}
                     </div>
                 </div>
             </div>
         </div>
-    );
+    )
 }
