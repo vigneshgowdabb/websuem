@@ -1,7 +1,9 @@
 import { createClient } from "@/lib/supabase/server"
 import { StatusBadge } from "@/components/crm/StatusBadge"
 import { format } from "date-fns"
-import { Search, Plus, Filter } from "lucide-react"
+import { Search, Filter } from "lucide-react"
+
+import { AddClientDialog } from "@/components/crm/AddClientDialog"
 
 export default async function ClientsPage() {
     const supabase = await createClient()
@@ -27,10 +29,7 @@ export default async function ClientsPage() {
                     <h2 className="text-2xl font-bold font-heading text-deep-purple">Clients</h2>
                     <p className="text-gray-500">Manage your client relationships and projects.</p>
                 </div>
-                <button className="flex items-center gap-2 px-4 py-2 bg-deep-purple text-white rounded-xl hover:bg-deep-purple/90 transition-colors shadow-sm">
-                    <Plus className="w-4 h-4" />
-                    <span>Add Client</span>
-                </button>
+                <AddClientDialog />
             </div>
 
             {/* Filters & Search */}

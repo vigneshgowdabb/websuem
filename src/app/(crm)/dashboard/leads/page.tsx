@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Search, Filter, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase";
+import { AddLeadDialog } from "@/components/crm/AddLeadDialog";
 
 export default function LeadsPage() {
     const [leads, setLeads] = useState<any[]>([]);
@@ -34,9 +35,7 @@ export default function LeadsPage() {
                     <Button variant="outline" className="flex items-center gap-2">
                         <Download className="w-4 h-4" /> Export
                     </Button>
-                    <Button className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 font-bold">
-                        + Add New Lead
-                    </Button>
+                    <AddLeadDialog />
                 </div>
             </div>
 

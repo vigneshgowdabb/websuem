@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase";
+import { createLead } from "@/lib/actions/leads";
 
 export function ContactForm() {
     const [loading, setLoading] = useState(false);
@@ -16,23 +16,35 @@ export function ContactForm() {
         setSuccess(false);
 
         const formData = new FormData(e.currentTarget);
-        const data = {
+
+        let service = formData.get("service") as "website" | "social" | "branding" | "automation" | "other" | "multiple";
+        if (!["website", "social", "branding", "automation", "multiple"].includes(service)) {
+            service = "other";
+        }
+
+        const input = {
             name: formData.get("name") as string,
             email: formData.get("email") as string,
-            service_interested: formData.get("service") as string,
+            service_interested: service,
             message: formData.get("message") as string,
+            source: "website" as const,
+            status: "new" as const,
         };
 
-        const supabase = createClient();
-        const { error: submitError } = await supabase.from("leads").insert([data]);
+        try {
+            const result = await createLead(input);
 
-        if (submitError) {
+            if (result.error) {
+                setError(result.error);
+            } else {
+                setSuccess(true);
+                (e.target as HTMLFormElement).reset();
+            }
+        } catch {
             setError("Something went wrong. Please try again.");
-        } else {
-            setSuccess(true);
-            (e.target as HTMLFormElement).reset();
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     }
 
     return (
@@ -78,7 +90,7 @@ export function ContactForm() {
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-vibrant-yellow focus:ring-2 focus:ring-vibrant-yellow/20 outline-none transition-all bg-white"
                     >
                         <option value="">Select a service...</option>
-                        <option value="web">Website Development</option>
+                        <option value="website">Website Development</option>
                         <option value="social">Social Media</option>
                         <option value="branding">Brand Identity</option>
                         <option value="automation">AI Automation</option>
