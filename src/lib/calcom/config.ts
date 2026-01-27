@@ -1,6 +1,6 @@
 // Cal.com Configuration
 
-export const CALCOM_USERNAME = process.env.CALCOM_USERNAME || ''
+export const CALCOM_USERNAME = process.env.NEXT_PUBLIC_CALCOM_USERNAME || ''
 export const CALCOM_API_KEY = process.env.CALCOM_API_KEY || ''
 
 // Default event types
