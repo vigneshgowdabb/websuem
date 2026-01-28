@@ -2,7 +2,7 @@ import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/marketing/ContactForm";
-import { CalComEmbed } from "@/components/crm/CalComEmbed";
+
 
 export default function ContactPage() {
     return (
@@ -32,28 +32,14 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-cream rounded-full flex items-center justify-center text-deep-purple">
-                                        📅
-                                    </div>
-                                    <div>
-                                        <h3 className="font-heading font-bold text-lg">Book a Call</h3>
-                                        <p className="text-gray-600">Schedule a 15-min discovery call</p>
-                                    </div>
-                                </div>
+
                             </div>
 
-                            {/* Calendar Embed Placeholder */}
-                            <div className="bg-gray-50 rounded-2xl overflow-hidden h-[600px] border border-gray-100">
-                                <CalComEmbed eventType="30min" />
-                            </div>
+                            {/* Right Column: Form */}
+                            <ContactForm />
+
                         </div>
-
-                        {/* Right Column: Form */}
-                        <ContactForm />
-
                     </div>
-                </div>
             </main>
 
             <Footer />
