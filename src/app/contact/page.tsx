@@ -1,5 +1,4 @@
 import { Header } from "@/components/marketing/Header";
-import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/marketing/ContactForm";
 
@@ -21,25 +20,17 @@ export default function ContactPage() {
                             </p>
 
                             <div className="space-y-8 mb-10">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-lavender rounded-full flex items-center justify-center text-deep-purple">
-                                        📧
-                                    </div>
-                                    <div>
-                                        <h3 className="font-heading font-bold text-lg">Email us</h3>
-                                        <p className="text-gray-600">hello@websuem.com</p>
-                                        <p className="text-sm text-gray-500">Response within 24 hours</p>
-                                    </div>
-                                </div>
 
 
                             </div>
 
-                            {/* Right Column: Form */}
-                            <ContactForm />
-
                         </div>
+
+                        {/* Right Column: Form */}
+                        <ContactForm />
+
                     </div>
+                </div>
             </main>
 
             <Footer />
