@@ -2,6 +2,7 @@ import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/marketing/ContactForm";
+import { CalComEmbed } from "@/components/crm/CalComEmbed";
 
 export default function ContactPage() {
     return (
@@ -43,8 +44,8 @@ export default function ContactPage() {
                             </div>
 
                             {/* Calendar Embed Placeholder */}
-                            <div className="bg-gray-50 rounded-2xl p-6 h-[400px] flex items-center justify-center border-2 border-dashed border-gray-200">
-                                <span className="text-gray-400">Calendar Integration Script Goes Here</span>
+                            <div className="bg-gray-50 rounded-2xl overflow-hidden h-[600px] border border-gray-100">
+                                <CalComEmbed eventType="30min" />
                             </div>
                         </div>
 
