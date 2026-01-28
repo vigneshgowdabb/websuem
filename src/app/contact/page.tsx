@@ -1,4 +1,5 @@
 import { Header } from "@/components/marketing/Header";
+import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/marketing/ContactForm";
 
