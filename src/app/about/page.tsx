@@ -44,7 +44,7 @@ export default function AboutPage() {
                     <div className="max-w-4xl mx-auto prose prose-lg text-gray-600">
                         <h3 className="font-heading text-2xl font-bold text-deep-purple">Why we exist</h3>
                         <p>
-                            The traditional agency model is broken. It's too slow, too expensive, and often disconnects the client from the creator. Freelancers can be hit-or-miss.
+                            The traditional agency model is broken. It&apos;s too slow, too expensive, and often disconnects the client from the creator. Freelancers can be hit-or-miss.
                             Websuem bridges this gap by leveraging AI to handle repetitive tasks, allowing us to focus on creativity and strategy—delivering agency-level work at freelancer prices.
                         </p>
                     </div>

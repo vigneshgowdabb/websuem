@@ -46,11 +46,14 @@ export function EmailComposer({
   open,
   onOpenChange,
   recipient,
-  leadId,
-  clientId,
+  leadId: _leadId,
+  clientId: _clientId,
   templates = [],
   onSend,
 }: EmailComposerProps) {
+  // leadId and clientId reserved for future use (linking emails to records)
+  void _leadId
+  void _clientId
   const [activeTab, setActiveTab] = useState<'compose' | 'template'>('compose')
   const [to, setTo] = useState(recipient?.email || '')
   const [toName, setToName] = useState(recipient?.name || '')
@@ -83,6 +86,7 @@ export function EmailComposer({
         setTemplateVariables(vars)
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTemplate, templates, toName])
 
   const handleSend = async () => {

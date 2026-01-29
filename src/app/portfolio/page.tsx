@@ -67,7 +67,7 @@ export default function PortfolioPage() {
                     <div className="mt-32 text-center bg-gray-50 rounded-[3rem] p-16">
                         <h2 className="font-heading text-4xl font-bold mb-6">Have a project in mind?</h2>
                         <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-                            We'd love to help you build something amazing. Let's discuss your goals and how we can achieve them.
+                            We&apos;d love to help you build something amazing. Let&apos;s discuss your goals and how we can achieve them.
                         </p>
                         <Button size="lg" className="bg-deep-purple text-white hover:bg-deep-purple/90 h-auto py-4 px-10 text-lg rounded-xl" asChild>
                             <Link href="/contact">Start a Project</Link>

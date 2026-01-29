@@ -6,11 +6,12 @@ import { Button } from '@/components/ui/button'
 import { ClientForm } from '@/components/crm/ClientForm'
 import { createClient as createClientAction } from '@/lib/actions/clients'
 import { toast } from 'sonner'
+import type { ClientInput } from '@/lib/validations/client'
 
 export function AddClientDialog() {
     const [open, setOpen] = useState(false)
 
-    const handleSubmit = async (data: any) => {
+    const handleSubmit = async (data: ClientInput) => {
         try {
             const result = await createClientAction(data)
             if (result.error) {

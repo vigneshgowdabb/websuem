@@ -114,7 +114,7 @@ export function ContactForm() {
                 {error && <div className="text-red-500 text-sm">{error}</div>}
                 {success && (
                     <div className="text-green-600 text-sm font-semibold bg-green-50 p-3 rounded-lg">
-                        Message sent! We'll get back to you soon.
+                        Message sent! We&apos;ll get back to you soon.
                     </div>
                 )}
 

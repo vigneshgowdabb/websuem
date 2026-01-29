@@ -6,11 +6,16 @@ import { Button } from '@/components/ui/button'
 import { LeadForm } from '@/components/crm/LeadForm'
 import { createLead } from '@/lib/actions/leads'
 import { toast } from 'sonner'
+import type { LeadInput } from '@/lib/validations/lead'
 
-export function AddLeadDialog() {
+interface AddLeadDialogProps {
+    onSuccess?: () => void
+}
+
+export function AddLeadDialog({ onSuccess }: AddLeadDialogProps) {
     const [open, setOpen] = useState(false)
 
-    const handleSubmit = async (data: any) => {
+    const handleSubmit = async (data: LeadInput) => {
         try {
             const result = await createLead(data)
             if (result.error) {
@@ -18,6 +23,7 @@ export function AddLeadDialog() {
             } else {
                 toast.success('Lead added successfully')
                 setOpen(false)
+                onSuccess?.()
             }
         } catch {
             toast.error('Something went wrong')

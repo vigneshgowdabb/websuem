@@ -87,7 +87,7 @@ export default function Home() {
                 </p>
               </div>
               <Button variant="outline" className="border-deep-purple text-deep-purple hover:bg-deep-purple hover:text-white" asChild>
-                <a href="/portfolio">View All Projects →</a>
+                <Link href="/portfolio">View All Projects →</Link>
               </Button>
             </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
                   <p className="text-gray-500 mb-4 line-clamp-2">High-conversion platform with AI recommendations.</p>
                   <span className="text-deep-purple font-semibold text-sm group-hover:underline decoration-vibrant-yellow decoration-2 underline-offset-4">View Case Study</span>
                 </div>
-                <a href="/portfolio/lumina" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></a>
+                <Link href="/portfolio/lumina" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></Link>
               </div>
 
               <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
@@ -118,7 +118,7 @@ export default function Home() {
                   <p className="text-gray-500 mb-4 line-clamp-2">Complete rebranding for a data analytics platform.</p>
                   <span className="text-deep-purple font-semibold text-sm group-hover:underline decoration-vibrant-yellow decoration-2 underline-offset-4">View Case Study</span>
                 </div>
-                <a href="/portfolio/vortex" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></a>
+                <Link href="/portfolio/vortex" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></Link>
               </div>
 
               <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
@@ -131,7 +131,7 @@ export default function Home() {
                   <p className="text-gray-500 mb-4 line-clamp-2">Automated customer support workflow reducing response time.</p>
                   <span className="text-deep-purple font-semibold text-sm group-hover:underline decoration-vibrant-yellow decoration-2 underline-offset-4">View Case Study</span>
                 </div>
-                <a href="/portfolio/nimbus" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></a>
+                <Link href="/portfolio/nimbus" className="absolute inset-0 z-10"><span className="sr-only">View Project</span></Link>
               </div>
             </div>
           </div>

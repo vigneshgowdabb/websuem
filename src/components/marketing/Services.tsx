@@ -51,7 +51,7 @@ export function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(250px,auto)]">
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <Link
                             key={service.title}
                             href={service.href}

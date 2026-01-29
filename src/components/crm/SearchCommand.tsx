@@ -18,7 +18,6 @@ import {
   Mail,
   Settings,
   LayoutDashboard,
-  Search,
   Plus,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'

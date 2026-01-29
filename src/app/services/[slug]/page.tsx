@@ -141,7 +141,7 @@ export default async function ServicePage(props: { params: Promise<{ slug: strin
                             </section>
 
                             <section>
-                                <h2 className="font-heading text-3xl font-bold mb-6">What's Included</h2>
+                                <h2 className="font-heading text-3xl font-bold mb-6">What&apos;s Included</h2>
                                 <ul className="space-y-4">
                                     {service.features.map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3 text-lg font-medium text-gray-700">

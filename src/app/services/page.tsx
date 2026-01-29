@@ -2,6 +2,7 @@ import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { Services } from "@/components/marketing/Services";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function ServicesPage() {
     return (
@@ -31,8 +32,8 @@ export default function ServicesPage() {
                         <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">
                             Whether you need a new website, a brand refresh, or AI automation, we deliver premium results in record time.
                         </p>
-                        <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow font-bold relative z-10">
-                            Get Your Custom Quote
+                        <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow font-bold relative z-10" asChild>
+                            <Link href="/contact">Get Your Custom Quote</Link>
                         </Button>
                     </div>
                 </div>

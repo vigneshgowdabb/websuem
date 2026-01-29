@@ -1,6 +1,7 @@
 import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const steps = [
     {
@@ -68,8 +69,8 @@ export default function ProcessPage() {
                     </div>
 
                     <div className="mt-20 text-center">
-                        <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow font-bold text-lg px-10 py-6 h-auto rounded-xl">
-                            Start Your Project
+                        <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow font-bold text-lg px-10 py-6 h-auto rounded-xl" asChild>
+                            <Link href="/contact">Start Your Project</Link>
                         </Button>
                     </div>
                 </div>

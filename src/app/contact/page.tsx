@@ -1,6 +1,5 @@
 import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
-import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/marketing/ContactForm";
 
 
@@ -15,7 +14,7 @@ export default function ContactPage() {
 
                         {/* Left Column: Info */}
                         <div>
-                            <h1 className="font-heading text-5xl font-bold mb-6">Let's talk about your project</h1>
+                            <h1 className="font-heading text-5xl font-bold mb-6">Let&apos;s talk about your project</h1>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                                 Ready to take your online presence to the next level? Fill out the form or book a call directly.
                             </p>

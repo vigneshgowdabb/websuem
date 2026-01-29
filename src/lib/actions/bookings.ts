@@ -145,7 +145,7 @@ export async function updateBooking(input: BookingUpdate) {
 
   const { id, datetime, duration_minutes, ...rest } = parsed.data
 
-  let updateData: any = { ...rest }
+  const updateData: Record<string, unknown> = { ...rest }
   if (datetime && duration_minutes) {
     updateData.start_time = new Date(datetime).toISOString()
     updateData.end_time = new Date(new Date(datetime).getTime() + duration_minutes * 60000).toISOString()

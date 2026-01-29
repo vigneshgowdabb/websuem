@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { LayoutDashboard, Users, Calendar, Settings, Mail, Building2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { SignOutButton } from "@/components/crm/SignOutButton";
@@ -70,10 +71,12 @@ export default async function CrmLayout({ children }: { children: React.ReactNod
                     <div className="flex items-center gap-4">
                         <span className="text-sm text-gray-500">{displayName}</span>
                         {crmUser?.avatar_url ? (
-                            <img
+                            <Image
                                 src={crmUser.avatar_url}
                                 alt={displayName}
-                                className="w-8 h-8 rounded-full object-cover"
+                                width={32}
+                                height={32}
+                                className="rounded-full object-cover"
                             />
                         ) : (
                             <div className="w-8 h-8 bg-deep-purple rounded-full text-white flex items-center justify-center text-xs font-bold">
