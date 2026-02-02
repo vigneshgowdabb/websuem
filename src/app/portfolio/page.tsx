@@ -21,6 +21,10 @@ const projects = [
         description: "A high-conversion e-commerce platform for a luxury lighting brand, featuring 3D product previews and AI-driven recommendations.",
         imageColor: "bg-lavender",
         slug: "lumina",
+        stats: [
+            { label: "Conversion", value: "+45%" },
+            { label: "Load Time", value: "1.2s" },
+        ],
     },
     {
         title: "Vortex SaaS",
@@ -28,6 +32,10 @@ const projects = [
         description: "Complete rebranding for a data analytics platform, including logo design, color system, and marketing collateral.",
         imageColor: "bg-cream",
         slug: "vortex",
+        stats: [
+            { label: "Deliverables", value: "25+" },
+            { label: "Timeline", value: "2 Weeks" },
+        ],
     },
     {
         title: "Elevate Partners",
@@ -35,6 +43,10 @@ const projects = [
         description: "Professional services website for a top-tier consulting firm, designed to establish authority and generate qualified leads.",
         imageColor: "bg-soft-pink",
         slug: "elevate",
+        stats: [
+            { label: "Leads", value: "+120%" },
+            { label: "Bounce Rate", value: "-35%" },
+        ],
     },
     {
         title: "Nimbus AI",
@@ -42,6 +54,10 @@ const projects = [
         description: "Custom automated customer support workflow using Claude and Make.com, reducing response times by 85%.",
         imageColor: "bg-mint",
         slug: "nimbus",
+        stats: [
+            { label: "Time Saved", value: "80%" },
+            { label: "Efficiency", value: "+300%" },
+        ],
     }
 ];
 

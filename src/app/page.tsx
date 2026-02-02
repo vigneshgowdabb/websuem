@@ -1,9 +1,11 @@
 import { Header } from "@/components/marketing/Header";
 import Hero from "@/components/marketing/Hero";
+import TechStack from "@/components/marketing/TechStack";
 import ServicesGrid from "@/components/marketing/ServicesGrid";
 import StatsSection from "@/components/marketing/StatsSection";
 import ProcessPreview from "@/components/marketing/ProcessPreview";
 import PortfolioPreview from "@/components/marketing/PortfolioPreview";
+import Testimonials from "@/components/marketing/Testimonials";
 import FinalCTA from "@/components/marketing/FinalCTA";
 import { Footer } from "@/components/marketing/Footer";
 
@@ -14,10 +16,12 @@ export default function Home() {
 
       <main className="flex-grow">
         <Hero />
+        <TechStack />
         <ServicesGrid />
         <StatsSection />
         <ProcessPreview />
         <PortfolioPreview />
+        <Testimonials />
         <FinalCTA />
       </main>
 
