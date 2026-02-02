@@ -119,8 +119,8 @@ export default function BookingsPage() {
                             <BookingCalendar
                                 bookings={bookings}
                                 onSelectBooking={(booking) => {
-                                    // Could open a detail modal
-                                    console.log('Selected booking:', booking)
+                                    // Could open a detail modal in the future
+                                    void booking; // Prevent unused variable warning
                                 }}
                                 onSelectSlot={() => {
                                     // Navigate to schedule page

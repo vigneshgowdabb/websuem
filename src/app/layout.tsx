@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     default: "Websuem | AI-Powered Web Agency",
   },
   description: "Websuem is a next-gen agency delivering premium websites, branding, and AI automation at record speeds.",
-  keywords: ["Web Design", "AI Agency", "Next.js Development", "Branding", "Automation"],
+  keywords: ["Web Design", "AI Agency", "Next.js Development", "Branding", "Automation", "Social Media Management"],
+  metadataBase: new URL("https://websuem.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -34,6 +35,19 @@ export const metadata: Metadata = {
         alt: "Websuem Agency",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Websuem | AI-Powered Web Agency",
+    description: "Premium websites delivered in days, not months.",
+    site: "@websuem",
+    creator: "@websuem",
+    images: ["/og-image.jpg"],
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

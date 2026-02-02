@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram, Mail, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Linkedin, Twitter, Instagram, Facebook, Mail, ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,13 +23,18 @@ const Footer = () => {
     social: [
       {
         label: "LinkedIn",
-        href: "https://linkedin.com/company/websuem",
+        href: "https://www.linkedin.com/company/websuem/",
         icon: Linkedin,
       },
-      { label: "Twitter", href: "https://twitter.com/websuem", icon: Twitter },
+      { label: "Twitter", href: "https://x.com/websuem", icon: Twitter },
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/profile.php?id=61587178088685",
+        icon: Facebook,
+      },
       {
         label: "Instagram",
-        href: "https://instagram.com/websuem",
+        href: "https://www.instagram.com/websuem/",
         icon: Instagram,
       },
     ],
@@ -40,8 +46,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-heading font-bold">
-              WEBSUEM
+            <Link href="/" className="inline-flex items-center gap-2" aria-label="Websuem Home">
+              <Image
+                src="/logo.png"
+                alt="Websuem Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+              <span className="text-2xl font-heading font-bold">WEBSUEM</span>
             </Link>
             <p className="text-white/60 mt-4 mb-6">
               Premium websites, social media management & AI automation —

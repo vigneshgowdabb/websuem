@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function Header() {
@@ -14,8 +15,15 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-heading font-bold text-2xl text-deep-purple">
-          WEBSUEM
+        <Link href="/" className="inline-flex items-center gap-2" aria-label="Websuem Home">
+          <Image
+            src="/logo.png"
+            alt="Websuem Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10"
+          />
+          <span className="font-heading font-bold text-2xl text-deep-purple">WEBSUEM</span>
         </Link>
 
         {/* Desktop Navigation */}

@@ -51,7 +51,7 @@ export function ContactForm() {
         <div className="bg-white p-8 md:p-10 rounded-3xl shadow-soft-lg border border-gray-100">
             <h2 className="font-heading text-2xl font-bold mb-6">Send us a message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-bold text-deep-purple">
                             Name

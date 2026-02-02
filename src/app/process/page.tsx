@@ -1,7 +1,17 @@
+import { Metadata } from "next";
 import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Process",
+  description: "A simple, transparent 6-step process designed for speed and quality. From discovery to launch in as little as 1-2 weeks.",
+  openGraph: {
+    title: "Our Process | Websuem",
+    description: "See how we take your project from idea to launch in 6 simple steps.",
+  },
+};
 
 const steps = [
     {
@@ -52,21 +62,21 @@ export default function ProcessPage() {
                 </div>
 
                 <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <ol className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
                         {steps.map((step) => (
-                            <div key={step.number} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all duration-300 group">
-                                <div className="text-5xl font-heading font-bold text-gray-100 group-hover:text-vibrant-yellow/40 transition-colors mb-4">
+                            <li key={step.number} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all duration-300 group">
+                                <div className="text-5xl font-heading font-bold text-gray-100 group-hover:text-vibrant-yellow/40 transition-colors mb-4" aria-hidden="true">
                                     {step.number}
                                 </div>
-                                <h3 className="font-heading text-2xl font-bold text-deep-purple mb-3">
+                                <h2 className="font-heading text-2xl font-bold text-deep-purple mb-3">
                                     {step.title}
-                                </h3>
+                                </h2>
                                 <p className="text-gray-600 leading-relaxed">
                                     {step.description}
                                 </p>
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ol>
 
                     <div className="mt-20 text-center">
                         <Button size="lg" className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 hover:shadow-glow font-bold text-lg px-10 py-6 h-auto rounded-xl" asChild>

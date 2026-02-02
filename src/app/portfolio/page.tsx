@@ -1,8 +1,18 @@
+import { Metadata } from "next";
 import { Header } from "@/components/marketing/Header";
 import Link from "next/link";
 import { Footer } from "@/components/marketing/Footer";
 import { ProjectCard } from "@/components/marketing/ProjectCard";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Explore our selected projects - from e-commerce platforms to brand identities and AI automation solutions.",
+  openGraph: {
+    title: "Portfolio | Websuem",
+    description: "See how we help ambitious brands define their story and scale their digital presence.",
+  },
+};
 
 const projects = [
     {

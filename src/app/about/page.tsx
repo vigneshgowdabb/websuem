@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Websuem - an AI-powered agency on a mission to democratize premium web services. Quality first, speed second, affordability third.",
+  openGraph: {
+    title: "About Websuem | AI-Powered Web Agency",
+    description: "Learn about our mission to deliver agency-level work at freelancer prices.",
+  },
+};
 
 export default function AboutPage() {
     return (
