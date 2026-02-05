@@ -34,14 +34,14 @@ export function Header() {
           <Link href="/portfolio" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
             Portfolio
           </Link>
+          <Link href="/pricing" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
+            Pricing
+          </Link>
           <Link href="/process" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
             Process
           </Link>
           <Link href="/about" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
             About
-          </Link>
-          <Link href="/contact" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
-            Contact
           </Link>
         </nav>
 
@@ -96,6 +96,13 @@ export function Header() {
               Portfolio
             </Link>
             <Link
+              href="/pricing"
+              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
+              onClick={closeMenu}
+            >
+              Pricing
+            </Link>
+            <Link
               href="/process"
               className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
               onClick={closeMenu}
@@ -108,13 +115,6 @@ export function Header() {
               onClick={closeMenu}
             >
               About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
-              onClick={closeMenu}
-            >
-              Contact
             </Link>
             <Link href="/contact" onClick={closeMenu}>
               <Button className="w-full bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 font-bold mt-2">
