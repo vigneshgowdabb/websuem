@@ -6,6 +6,7 @@ import StatsSection from "@/components/marketing/StatsSection";
 import ProcessPreview from "@/components/marketing/ProcessPreview";
 import PortfolioPreview from "@/components/marketing/PortfolioPreview";
 import Testimonials from "@/components/marketing/Testimonials";
+import NewsletterCTA from "@/components/marketing/NewsletterCTA";
 import FinalCTA from "@/components/marketing/FinalCTA";
 import { Footer } from "@/components/marketing/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <ProcessPreview />
         <PortfolioPreview />
         <Testimonials />
+        <NewsletterCTA />
         <FinalCTA />
       </main>
 
