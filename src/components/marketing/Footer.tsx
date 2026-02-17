@@ -11,7 +11,7 @@ const Footer = () => {
     company: [
       { label: "About", href: "/about" },
       { label: "Process", href: "/process" },
-      { label: "Portfolio", href: "/portfolio" },
+      { label: "Services", href: "/services" },
       { label: "Contact", href: "/contact" },
     ],
     services: [
@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-deep-purple text-white">
+    <footer className="bg-deep-green text-white border-t border-white/5">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
@@ -56,7 +56,7 @@ const Footer = () => {
               />
               <span className="text-2xl font-heading font-bold">WEBSUEM</span>
             </Link>
-            <p className="text-white/60 mt-4 mb-6">
+            <p className="text-white/50 mt-4 mb-6">
               Premium websites, social media management & AI automation —
               delivered in days, not months.
             </p>
@@ -71,7 +71,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-vibrant-yellow hover:text-deep-purple transition-all duration-300"
+                    className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-accent-green hover:text-deep-green transition-all duration-300"
                     aria-label={social.label}
                   >
                     <Icon className="w-5 h-5" />
@@ -89,7 +89,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-vibrant-yellow transition-colors duration-300"
+                    className="text-white/50 hover:text-accent-green transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -106,7 +106,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-vibrant-yellow transition-colors duration-300"
+                    className="text-white/50 hover:text-accent-green transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -120,36 +120,38 @@ const Footer = () => {
             <h4 className="font-heading font-semibold mb-6">Get in Touch</h4>
             <a
               href="mailto:hello@websuem.com"
-              className="flex items-center gap-2 text-white/60 hover:text-vibrant-yellow transition-colors duration-300 mb-4"
+              className="flex items-center gap-2 text-white/50 hover:text-accent-green transition-colors duration-300 mb-4"
             >
               <Mail className="w-4 h-4" />
               hello@websuem.com
             </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-vibrant-yellow text-deep-purple font-semibold rounded-lg hover:shadow-glow transition-all duration-300 mt-4"
+            <a
+              href="https://calendly.com/hello-websuem/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-accent-green text-deep-green font-semibold rounded-lg hover:shadow-glow transition-all duration-300 mt-4"
             >
               Book a Call
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © {currentYear} Websuem. All rights reserved.
+        <div className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/30 text-sm">
+            &copy; {currentYear} Websuem. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="text-white/40 text-sm hover:text-white/60 transition-colors"
+              className="text-white/30 text-sm hover:text-white/50 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-white/40 text-sm hover:text-white/60 transition-colors"
+              className="text-white/30 text-sm hover:text-white/50 transition-colors"
             >
               Terms of Service
             </Link>

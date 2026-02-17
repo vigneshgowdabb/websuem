@@ -12,7 +12,7 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-deep-green/90 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="inline-flex items-center gap-2" aria-label="Websuem Home">
@@ -23,40 +23,41 @@ export function Header() {
             height={40}
             className="w-10 h-10"
           />
-          <span className="font-heading font-bold text-2xl text-deep-purple">WEBSUEM</span>
+          <span className="font-heading font-bold text-2xl text-white">WEBSUEM</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/services" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
+          <Link href="/services" className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors">
             Services
           </Link>
-          <Link href="/portfolio" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
-            Portfolio
-          </Link>
-          <Link href="/pricing" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
-            Pricing
-          </Link>
-          <Link href="/process" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
+          <Link href="/process" className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors">
             Process
           </Link>
-          <Link href="/about" className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors">
+          <Link href="/about" className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors">
             About
+          </Link>
+          <Link href="/contact" className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors">
+            Contact
           </Link>
         </nav>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact">
-            <Button className="bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 font-bold">
+          <a
+            href="https://calendly.com/hello-websuem/discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-accent-green text-deep-green hover:bg-bright-green font-bold">
               Book a Call
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-deep-purple p-2"
+          className="md:hidden text-warm-cream p-2"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -79,48 +80,46 @@ export function Header() {
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="container mx-auto px-6 py-4 bg-white border-t border-gray-100">
+        <nav className="container mx-auto px-6 py-4 bg-deep-green border-t border-white/5">
           <div className="flex flex-col gap-4">
             <Link
               href="/services"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
+              className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors py-2"
               onClick={closeMenu}
             >
               Services
             </Link>
             <Link
-              href="/portfolio"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
-              onClick={closeMenu}
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
-              onClick={closeMenu}
-            >
-              Pricing
-            </Link>
-            <Link
               href="/process"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
+              className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors py-2"
               onClick={closeMenu}
             >
               Process
             </Link>
             <Link
               href="/about"
-              className="text-deep-purple hover:text-vibrant-yellow font-medium transition-colors py-2"
+              className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors py-2"
               onClick={closeMenu}
             >
               About
             </Link>
-            <Link href="/contact" onClick={closeMenu}>
-              <Button className="w-full bg-vibrant-yellow text-deep-purple hover:bg-vibrant-yellow/90 font-bold mt-2">
+            <Link
+              href="/contact"
+              className="text-warm-cream/80 hover:text-accent-green font-medium transition-colors py-2"
+              onClick={closeMenu}
+            >
+              Contact
+            </Link>
+            <a
+              href="https://calendly.com/hello-websuem/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              <Button className="w-full bg-accent-green text-deep-green hover:bg-bright-green font-bold mt-2">
                 Book a Call
               </Button>
-            </Link>
+            </a>
           </div>
         </nav>
       </div>

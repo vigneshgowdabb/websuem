@@ -12,7 +12,6 @@ import {
   Star,
   Shield,
   Clock,
-  Sparkles,
   Globe,
   Palette,
   Bot,
@@ -28,8 +27,6 @@ const pricingTiers = [
     description:
       "Everything you need to establish your online presence and start attracting customers.",
     icon: Zap,
-    color: "bg-mint",
-    iconColor: "text-green-600",
     popular: false,
     features: [
       { name: "5-page responsive website", included: true },
@@ -54,8 +51,6 @@ const pricingTiers = [
     description:
       "Comprehensive solution for growing businesses ready to scale their digital presence.",
     icon: Star,
-    color: "bg-vibrant-yellow",
-    iconColor: "text-deep-purple",
     popular: true,
     features: [
       { name: "10-page custom website", included: true },
@@ -80,8 +75,6 @@ const pricingTiers = [
     description:
       "Complete digital transformation with custom solutions, AI automation, and ongoing support.",
     icon: Shield,
-    color: "bg-soft-pink",
-    iconColor: "text-pink-600",
     popular: false,
     features: [
       { name: "Unlimited pages", included: true },
@@ -105,7 +98,8 @@ const serviceAddons = [
     name: "Social Media Management",
     price: "500",
     period: "/month",
-    description: "Content creation, scheduling, and engagement across platforms",
+    description:
+      "Content creation, scheduling, and engagement across platforms",
     icon: MessageCircle,
   },
   {
@@ -179,13 +173,15 @@ const PricingCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className={`relative bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all duration-300 ${
-        tier.popular ? "ring-2 ring-vibrant-yellow scale-105 z-10" : ""
+      className={`relative bg-white/[0.03] backdrop-blur-sm rounded-2xl border transition-all duration-300 ${
+        tier.popular
+          ? "border-accent-green/50 scale-105 z-10 shadow-glow"
+          : "border-white/5 hover:border-accent-green/20"
       }`}
     >
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <span className="bg-vibrant-yellow text-deep-purple text-sm font-bold px-4 py-1 rounded-full">
+          <span className="bg-accent-green text-deep-green text-sm font-bold px-4 py-1 rounded-full">
             Most Popular
           </span>
         </div>
@@ -194,42 +190,40 @@ const PricingCard = ({
       <div className="p-8">
         {/* Header */}
         <div className="flex items-start gap-4 mb-6">
-          <div
-            className={`w-12 h-12 ${tier.color} rounded-xl flex items-center justify-center`}
-          >
-            <Icon className={`w-6 h-6 ${tier.iconColor}`} />
+          <div className="w-12 h-12 bg-accent-green/10 rounded-xl flex items-center justify-center">
+            <Icon className="w-6 h-6 text-accent-green" />
           </div>
           <div>
-            <h3 className="text-xl font-heading font-bold text-deep-purple">
+            <h3 className="text-xl font-heading font-bold text-white">
               {tier.name}
             </h3>
-            <p className="text-sm text-gray-500">{tier.subtitle}</p>
+            <p className="text-sm text-muted-cream">{tier.subtitle}</p>
           </div>
         </div>
 
         {/* Price */}
         <div className="mb-6">
-          <div className="flex items-baseline gap-1">
-            <span className="text-sm text-gray-500">{tier.period === "starting at" ? "Starting at" : ""}</span>
-          </div>
+          {tier.period === "starting at" && (
+            <span className="text-sm text-muted-cream">Starting at</span>
+          )}
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-heading font-bold text-deep-purple">
+            <span className="text-4xl font-heading font-bold text-white">
               ${tier.price}
             </span>
             {tier.period === "/month" && (
-              <span className="text-gray-500">/month</span>
+              <span className="text-muted-cream">/month</span>
             )}
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 mb-6">{tier.description}</p>
+        <p className="text-muted-cream mb-6">{tier.description}</p>
 
         {/* Delivery Time */}
         <div className="flex items-center gap-2 mb-6 text-sm">
-          <Clock className="w-4 h-4 text-warm-orange" />
-          <span className="text-gray-600">
-            Delivery: <strong>{tier.deliveryTime}</strong>
+          <Clock className="w-4 h-4 text-accent-green" />
+          <span className="text-muted-cream">
+            Delivery: <strong className="text-white">{tier.deliveryTime}</strong>
           </span>
         </div>
 
@@ -238,13 +232,13 @@ const PricingCard = ({
           {tier.features.map((feature) => (
             <li key={feature.name} className="flex items-center gap-3">
               {feature.included ? (
-                <Check className="w-5 h-5 text-mint flex-shrink-0" />
+                <Check className="w-5 h-5 text-accent-green flex-shrink-0" />
               ) : (
-                <X className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                <X className="w-5 h-5 text-white/20 flex-shrink-0" />
               )}
               <span
                 className={
-                  feature.included ? "text-gray-700" : "text-gray-400"
+                  feature.included ? "text-warm-cream" : "text-white/30"
                 }
               >
                 {feature.name}
@@ -256,10 +250,10 @@ const PricingCard = ({
         {/* CTA */}
         <Link
           href="/contact"
-          className={`block w-full text-center py-4 rounded-lg font-semibold transition-all duration-300 ${
+          className={`block w-full text-center py-4 rounded-xl font-bold transition-all duration-300 ${
             tier.popular
-              ? "bg-vibrant-yellow text-deep-purple hover:shadow-glow"
-              : "bg-deep-purple text-white hover:bg-deep-purple/90"
+              ? "bg-accent-green text-deep-green hover:bg-bright-green hover:shadow-glow"
+              : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
           }`}
         >
           {tier.cta}
@@ -284,18 +278,18 @@ const AddonCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="bg-white p-6 rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300"
+      className="bg-white/[0.03] backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-accent-green/20 transition-all duration-300"
     >
       <div className="flex items-start gap-4">
-        <div className="w-10 h-10 bg-lavender rounded-lg flex items-center justify-center flex-shrink-0">
-          <Icon className="w-5 h-5 text-deep-purple" />
+        <div className="w-10 h-10 bg-accent-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+          <Icon className="w-5 h-5 text-accent-green" />
         </div>
         <div className="flex-1">
-          <h4 className="font-semibold text-deep-purple mb-1">{addon.name}</h4>
-          <p className="text-sm text-gray-600 mb-2">{addon.description}</p>
-          <p className="text-lg font-bold text-vibrant-yellow">
+          <h4 className="font-semibold text-white mb-1">{addon.name}</h4>
+          <p className="text-sm text-muted-cream mb-2">{addon.description}</p>
+          <p className="text-lg font-bold text-accent-green">
             ${addon.price}
-            <span className="text-sm font-normal text-gray-500">
+            <span className="text-sm font-normal text-muted-cream">
               {addon.period}
             </span>
           </p>
@@ -318,55 +312,61 @@ const FAQItem = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="border-b border-gray-200 pb-6"
+      className="border-b border-white/5 pb-6"
     >
-      <h4 className="text-lg font-semibold text-deep-purple mb-2">
+      <h4 className="text-lg font-semibold text-white mb-2">
         {faq.question}
       </h4>
-      <p className="text-gray-600">{faq.answer}</p>
+      <p className="text-muted-cream">{faq.answer}</p>
     </motion.div>
   );
 };
 
 export default function PricingPage() {
   return (
-    <div className="flex flex-col min-h-screen font-body text-deep-purple">
+    <div className="flex flex-col min-h-screen font-body text-warm-cream">
       <Header />
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-lavender to-white">
-          <div className="container mx-auto px-6">
+        <section className="pt-32 pb-20 bg-deep-green relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-accent-green/[0.03] rounded-full blur-3xl" />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <motion.div
               className="text-center max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-medium text-deep-purple mb-6">
-                <Sparkles className="w-4 h-4 text-vibrant-yellow" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] backdrop-blur-sm rounded-full text-sm font-medium text-accent-green border border-white/10 mb-8">
                 Transparent Pricing
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-deep-purple mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
                 Simple, Honest Pricing
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-lg md:text-xl text-muted-cream mb-8">
                 No hidden fees, no surprises. Choose a plan that fits your needs
                 and budget. Every project includes our signature quality and
                 dedicated support.
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-mint" />
-                  <span>No hidden fees</span>
+                  <Check className="w-5 h-5 text-accent-green" />
+                  <span className="text-warm-cream">No hidden fees</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-mint" />
-                  <span>100% satisfaction guarantee</span>
+                  <Check className="w-5 h-5 text-accent-green" />
+                  <span className="text-warm-cream">
+                    100% satisfaction guarantee
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-mint" />
-                  <span>Flexible payment options</span>
+                  <Check className="w-5 h-5 text-accent-green" />
+                  <span className="text-warm-cream">
+                    Flexible payment options
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -374,7 +374,7 @@ export default function PricingPage() {
         </section>
 
         {/* Pricing Tiers */}
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-dark-navy">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 max-w-6xl mx-auto">
               {pricingTiers.map((tier, index) => (
@@ -385,19 +385,19 @@ export default function PricingPage() {
         </section>
 
         {/* What's Included in All Plans */}
-        <section className="py-16 bg-cream">
+        <section className="py-20 bg-deep-green border-y border-white/5">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Included in Every Plan
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Regardless of which tier you choose, you'll receive these
+              <p className="text-muted-cream max-w-2xl mx-auto">
+                Regardless of which tier you choose, you&apos;ll receive these
                 essential features and benefits as standard.
               </p>
             </motion.div>
@@ -406,11 +406,13 @@ export default function PricingPage() {
               {[
                 {
                   title: "Responsive Design",
-                  description: "Perfect on every device, from phones to desktops",
+                  description:
+                    "Perfect on every device, from phones to desktops",
                 },
                 {
                   title: "Performance Optimized",
-                  description: "Fast loading speeds for better user experience",
+                  description:
+                    "Fast loading speeds for better user experience",
                 },
                 {
                   title: "Source Code Access",
@@ -427,15 +429,15 @@ export default function PricingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-soft text-center"
+                  className="bg-white/[0.03] backdrop-blur-sm p-6 rounded-xl border border-white/5 text-center"
                 >
-                  <div className="w-10 h-10 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Check className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-accent-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Check className="w-5 h-5 text-accent-green" />
                   </div>
-                  <h3 className="font-semibold text-deep-purple mb-2">
+                  <h3 className="font-semibold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                  <p className="text-sm text-muted-cream">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -443,21 +445,21 @@ export default function PricingPage() {
         </section>
 
         {/* Add-ons Section */}
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-dark-navy">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                 Enhance Your Project
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
                 Add-On Services
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-muted-cream max-w-2xl mx-auto">
                 Expand your digital presence with these complementary services.
                 Add them to any plan or purchase separately.
               </p>
@@ -472,18 +474,18 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-lavender">
+        <section className="py-20 bg-deep-green border-t border-white/5">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                 Questions?
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
                 Frequently Asked Questions
               </h2>
             </motion.div>
@@ -497,33 +499,35 @@ export default function PricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-deep-purple">
+        <section className="py-24 bg-dark-navy border-t border-white/5">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Not sure which plan is right for you?
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                Not sure which plan is right?
               </h2>
-              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-                Let's talk about your project. We'll help you choose the perfect
-                solution for your business goals and budget.
+              <p className="text-lg text-muted-cream mb-10 max-w-2xl mx-auto">
+                Let&apos;s talk about your project. We&apos;ll help you choose the
+                perfect solution for your business goals and budget.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-vibrant-yellow text-deep-purple font-semibold rounded-lg hover:shadow-glow transition-all duration-300"
+                <a
+                  href="https://calendly.com/hello-websuem/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-accent-green text-deep-green font-bold text-lg rounded-xl hover:bg-bright-green hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Schedule a Free Consultation
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  View Our Work
+                  View Services
                 </Link>
               </div>
             </motion.div>

@@ -13,15 +13,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary backgrounds
+        // Primary dark backgrounds
+        "deep-green": "#021A0A",
+        "dark-navy": "#0A1628",
+        forest: "#0D2818",
+        "dark-surface": "#111827",
+
+        // Accent greens
+        "accent-green": "#4ADE80",
+        "bright-green": "#22C55E",
+
+        // Secondary accent
+        gold: "#F59E0B",
+
+        // Text on dark
+        "warm-cream": "#F5F0E8",
+        "muted-cream": "#A3A08E",
+
+        // Legacy (kept for CRM pages)
+        "deep-purple": "#1A1235",
+        "vibrant-yellow": "#FFD84D",
         lavender: "#F5F0FF",
         cream: "#FFFBF5",
-
-        // Text
-        "deep-purple": "#1A1235",
-
-        // Accents
-        "vibrant-yellow": "#FFD84D",
         "warm-orange": "#FF8A4C",
         "soft-pink": "#FFE4E6",
         mint: "#D1FAE5",
@@ -34,31 +47,29 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#FFD84D",
-          foreground: "#1A1235",
+          DEFAULT: "#22C55E",
+          foreground: "#021A0A",
         },
         secondary: {
-          DEFAULT: "#F5F0FF",
-          foreground: "#1A1235",
+          DEFAULT: "#0A1628",
+          foreground: "#F5F0E8",
         },
         muted: {
-          DEFAULT: "#F5F0FF",
-          foreground: "#6B7280",
+          DEFAULT: "#111827",
+          foreground: "#A3A08E",
         },
         accent: {
-          DEFAULT: "#FF8A4C",
-          foreground: "#FFFFFF",
+          DEFAULT: "#F59E0B",
+          foreground: "#021A0A",
         },
       },
       fontFamily: {
-        heading: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        heading: ["var(--font-playfair)", "Georgia", "serif"],
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
         "fade-in": "fadeIn 0.4s ease-out forwards",
-        float: "float 4s ease-in-out infinite",
-        "count-up": "countUp 2s ease-out forwards",
       },
       keyframes: {
         fadeUp: {
@@ -69,16 +80,12 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
-        },
       },
       boxShadow: {
-        glow: "0 4px 20px rgba(255, 216, 77, 0.4)",
-        "glow-lg": "0 8px 40px rgba(255, 216, 77, 0.3)",
-        soft: "0 4px 12px rgba(0, 0, 0, 0.1)",
-        "soft-lg": "0 8px 30px rgba(0, 0, 0, 0.12)",
+        glow: "0 4px 20px rgba(74, 222, 128, 0.3)",
+        "glow-lg": "0 8px 40px rgba(74, 222, 128, 0.2)",
+        soft: "0 4px 12px rgba(0, 0, 0, 0.3)",
+        "soft-lg": "0 8px 30px rgba(0, 0, 0, 0.4)",
       },
     },
   },

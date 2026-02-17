@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema, WebsiteSchema, LocalBusinessSchema } from "@/components/seo/JsonLd";
 
@@ -8,39 +8,43 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Websuem",
-    default: "Websuem | AI-Powered Web Agency",
+    default: "Websuem — AI-Powered Web Design Agency | Premium Websites in Days",
   },
-  description: "Websuem is a next-gen agency delivering premium websites, branding, and AI automation at record speeds.",
-  keywords: ["Web Design", "AI Agency", "Next.js Development", "Branding", "Automation", "Social Media Management"],
+  description: "Websuem is a next-gen agency delivering premium websites, branding, and AI automation. Direct founder access, modern tech stack, rapid delivery.",
+  keywords: ["Web Design", "AI Agency", "Next.js Development", "Branding", "Automation", "Social Media Management", "Premium Websites"],
   metadataBase: new URL("https://websuem.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://websuem.com",
     siteName: "Websuem",
-    title: "Websuem | AI-Powered Web Agency",
-    description: "Premium websites delivered in days, not months.",
+    title: "Websuem — AI-Powered Web Design Agency",
+    description: "Premium websites built in days, not months. Direct founder access, AI-enhanced workflow.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Websuem Agency",
+        alt: "Websuem — Premium Web Design Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Websuem | AI-Powered Web Agency",
-    description: "Premium websites delivered in days, not months.",
+    title: "Websuem — AI-Powered Web Design Agency",
+    description: "Premium websites built in days, not months.",
     site: "@websuem",
     creator: "@websuem",
     images: ["/og-image.jpg"],
@@ -65,7 +69,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}
+        className={`${inter.variable} ${playfairDisplay.variable} font-body antialiased`}
       >
         {children}
       </body>

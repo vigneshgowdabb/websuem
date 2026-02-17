@@ -7,16 +7,11 @@ import { Footer } from "@/components/marketing/Footer";
 import {
   ArrowRight,
   Award,
-  Users,
   Zap,
   Target,
-  Heart,
-  Lightbulb,
-  Rocket,
   Shield,
   Clock,
   CheckCircle,
-  Star,
   Globe,
   Code,
   Palette,
@@ -25,7 +20,7 @@ import {
 
 const stats = [
   { label: "Projects Completed", value: "50+", icon: CheckCircle },
-  { label: "Happy Clients", value: "40+", icon: Heart },
+  { label: "Happy Clients", value: "40+", icon: Award },
   { label: "Countries Served", value: "12", icon: Globe },
   { label: "Avg. Delivery Time", value: "14 days", icon: Clock },
 ];
@@ -36,28 +31,24 @@ const values = [
     description:
       "Every deliverable reflects expertise and attention to detail. We never compromise on quality.",
     icon: Award,
-    color: "bg-lavender",
   },
   {
     title: "Speed Second",
     description:
       "Most projects delivered in 1-2 weeks. We work efficiently without sacrificing excellence.",
     icon: Zap,
-    color: "bg-vibrant-yellow",
   },
   {
     title: "Affordability Third",
     description:
       "Premium work without the premium markup. Agency quality at accessible prices.",
     icon: Target,
-    color: "bg-mint",
   },
   {
     title: "Transparency Always",
     description:
       "Clear communication, honest pricing, no hidden fees. You always know where your project stands.",
     icon: Shield,
-    color: "bg-soft-pink",
   },
 ];
 
@@ -137,28 +128,31 @@ const whyChooseUs = [
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen font-body text-deep-purple selection:bg-vibrant-yellow selection:text-deep-purple">
+    <div className="flex flex-col min-h-screen font-body text-warm-cream">
       <Header />
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-lavender to-white">
-          <div className="container mx-auto px-6">
+        <section className="pt-32 pb-20 bg-deep-green relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-accent-green/[0.03] rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent-green/[0.02] rounded-full blur-3xl" />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <motion.div
               className="text-center max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-medium text-deep-purple mb-6">
-                <Users className="w-4 h-4 text-vibrant-yellow" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] backdrop-blur-sm rounded-full text-sm font-medium text-accent-green border border-white/10 mb-8">
                 About Us
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-deep-purple mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
                 We Build Digital Experiences That{" "}
-                <span className="text-vibrant-yellow">Drive Growth</span>
+                <span className="text-accent-green">Drive Growth</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-lg md:text-xl text-muted-cream max-w-2xl mx-auto leading-relaxed">
                 An AI-powered agency on a mission to democratize premium web
                 services. Quality first, speed second, affordability third.
               </p>
@@ -167,9 +161,9 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 bg-white">
+        <section className="py-16 bg-dark-navy border-y border-white/5">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
@@ -181,11 +175,11 @@ export default function AboutPage() {
                     transition={{ delay: index * 0.1 }}
                     className="text-center"
                   >
-                    <Icon className="w-8 h-8 text-vibrant-yellow mx-auto mb-3" />
-                    <p className="text-3xl md:text-4xl font-heading font-bold text-deep-purple">
+                    <Icon className="w-8 h-8 text-accent-green mx-auto mb-3" />
+                    <p className="text-3xl md:text-4xl font-heading font-bold text-white">
                       {stat.value}
                     </p>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
+                    <p className="text-sm text-muted-cream mt-1">{stat.label}</p>
                   </motion.div>
                 );
               })}
@@ -194,38 +188,38 @@ export default function AboutPage() {
         </section>
 
         {/* Our Story Section */}
-        <section className="py-16 bg-cream">
+        <section className="py-20 bg-deep-green">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+                <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                   Our Story
                 </span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-6">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-8">
                   Why We Started Websuem
                 </h2>
-                <div className="space-y-4 text-gray-600">
+                <div className="space-y-5 text-muted-cream leading-relaxed">
                   <p>
-                    The traditional agency model is broken. It's too slow, too
+                    The traditional agency model is broken. It&apos;s too slow, too
                     expensive, and often disconnects clients from the people
                     actually doing the work. Freelancers can be hit-or-miss, and
                     finding reliable talent is a gamble.
                   </p>
                   <p>
                     We saw an opportunity to bridge this gap. By leveraging AI
-                    to handle repetitive tasks—research, initial drafts, code
-                    boilerplates—we free ourselves to focus on what truly
+                    to handle repetitive tasks — research, initial drafts, code
+                    boilerplates — we free ourselves to focus on what truly
                     matters: creativity, strategy, and delivering exceptional
                     results.
                   </p>
                   <p>
                     The result? Agency-level quality at freelancer prices,
-                    delivered in days instead of months. That's not a marketing
-                    gimmick—it's our operating model.
+                    delivered in days instead of months. That&apos;s not a marketing
+                    gimmick — it&apos;s our operating model.
                   </p>
                 </div>
               </motion.div>
@@ -234,27 +228,27 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-soft"
+                className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               >
-                <h3 className="font-heading font-bold text-xl text-deep-purple mb-6">
+                <h3 className="font-heading font-bold text-xl text-white mb-8">
                   Our Journey
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {milestones.map((milestone, index) => (
                     <div key={index} className="flex gap-4">
                       <div className="flex flex-col items-center">
-                        <div className="w-10 h-10 bg-vibrant-yellow rounded-full flex items-center justify-center text-deep-purple font-bold text-sm">
+                        <div className="w-10 h-10 bg-accent-green/20 border border-accent-green/30 rounded-full flex items-center justify-center text-accent-green font-bold text-sm">
                           {milestone.year.slice(-2)}
                         </div>
                         {index < milestones.length - 1 && (
-                          <div className="w-0.5 h-full bg-gray-200 mt-2" />
+                          <div className="w-px h-full bg-white/10 mt-3" />
                         )}
                       </div>
-                      <div className="pb-6">
-                        <h4 className="font-semibold text-deep-purple">
+                      <div className="pb-2">
+                        <h4 className="font-semibold text-white">
                           {milestone.title}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-muted-cream mt-1">
                           {milestone.description}
                         </p>
                       </div>
@@ -267,21 +261,21 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section */}
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-dark-navy">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                 What We Stand For
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
                 Our Core Values
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-muted-cream max-w-2xl mx-auto">
                 These principles guide every decision we make and every project
                 we deliver.
               </p>
@@ -297,17 +291,15 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl p-6 shadow-soft hover:shadow-soft-lg transition-shadow"
+                    className="bg-white/[0.03] backdrop-blur-sm rounded-xl p-6 border border-white/5 hover:border-accent-green/20 transition-all duration-300"
                   >
-                    <div
-                      className={`w-12 h-12 ${value.color} rounded-xl flex items-center justify-center mb-4`}
-                    >
-                      <Icon className="w-6 h-6 text-deep-purple" />
+                    <div className="w-12 h-12 bg-accent-green/10 rounded-xl flex items-center justify-center mb-5">
+                      <Icon className="w-6 h-6 text-accent-green" />
                     </div>
-                    <h3 className="font-semibold text-deep-purple mb-2">
+                    <h3 className="font-semibold text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{value.description}</p>
+                    <p className="text-sm text-muted-cream">{value.description}</p>
                   </motion.div>
                 );
               })}
@@ -316,21 +308,21 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-lavender">
+        <section className="py-20 bg-deep-green">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                 Meet The Team
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
                 The People Behind Websuem
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-muted-cream max-w-2xl mx-auto">
                 A lean, focused team of specialists dedicated to delivering
                 exceptional results.
               </p>
@@ -346,23 +338,23 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-2xl p-8 shadow-soft"
+                    className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-accent-green/20 transition-all duration-300"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-vibrant-yellow to-warm-orange rounded-2xl flex items-center justify-center mb-6">
-                      <Icon className="w-8 h-8 text-deep-purple" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent-green/20 to-accent-green/5 border border-accent-green/20 rounded-2xl flex items-center justify-center mb-6">
+                      <Icon className="w-8 h-8 text-accent-green" />
                     </div>
-                    <h3 className="font-heading font-bold text-xl text-deep-purple mb-1">
+                    <h3 className="font-heading font-bold text-xl text-white mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-warm-orange text-sm font-medium mb-4">
+                    <p className="text-accent-green text-sm font-medium mb-4">
                       {member.role}
                     </p>
-                    <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
+                    <p className="text-muted-cream text-sm mb-5">{member.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {member.expertise.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-deep-purple"
+                          className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-warm-cream border border-white/10"
                         >
                           {skill}
                         </span>
@@ -376,18 +368,18 @@ export default function AboutPage() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-dark-navy">
           <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
                 Why Websuem
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
                 What Makes Us Different
               </h2>
             </motion.div>
@@ -400,16 +392,16 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex gap-4 p-6 bg-gray-50 rounded-xl"
+                  className="flex gap-4 p-6 bg-white/[0.03] rounded-xl border border-white/5"
                 >
-                  <div className="w-10 h-10 bg-mint rounded-full flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-accent-green/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-accent-green" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-deep-purple mb-2">
+                    <h3 className="font-semibold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="text-sm text-muted-cream">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -418,34 +410,35 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-deep-purple">
+        <section className="py-24 bg-deep-green border-t border-white/5">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Rocket className="w-12 h-12 text-vibrant-yellow mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
                 Ready to Work With Us?
               </h2>
-              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-                Let's discuss your project and see how we can help you achieve
+              <p className="text-lg text-muted-cream mb-10 max-w-2xl mx-auto">
+                Let&apos;s discuss your project and see how we can help you achieve
                 your digital goals.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-vibrant-yellow text-deep-purple font-semibold rounded-lg hover:shadow-glow transition-all duration-300"
+                <a
+                  href="https://calendly.com/hello-websuem/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-accent-green text-deep-green font-bold text-lg rounded-xl hover:bg-bright-green hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  Start a Project
+                  Book a Discovery Call
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  View Our Work
+                  View Services
                 </Link>
               </div>
             </motion.div>

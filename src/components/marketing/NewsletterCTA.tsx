@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, Check, Download, Sparkles } from "lucide-react";
+import { Mail, ArrowRight, Check, Download } from "lucide-react";
 
 export default function NewsletterCTA() {
   const [email, setEmail] = useState("");
@@ -30,11 +30,11 @@ export default function NewsletterCTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-deep-purple via-deep-purple to-purple-900 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-dark-navy via-dark-navy to-deep-green relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-vibrant-yellow rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-warm-orange rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-green rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-green rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -45,15 +45,15 @@ export default function NewsletterCTA() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm font-medium text-white mb-6">
-              <Download className="w-4 h-4 text-vibrant-yellow" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full text-sm font-medium text-white mb-6 border border-white/5">
+              <Download className="w-4 h-4 text-accent-green" />
               Free Resource
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
               Get Our Free Website{" "}
-              <span className="text-vibrant-yellow">Launch Checklist</span>
+              <span className="text-accent-green">Launch Checklist</span>
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
               50+ essential checks before going live. Plus, get weekly insights
               on web design, AI automation, and growing your business online.
             </p>
@@ -74,9 +74,9 @@ export default function NewsletterCTA() {
             ].map((benefit) => (
               <div
                 key={benefit}
-                className="flex items-center gap-2 justify-center text-white/90"
+                className="flex items-center gap-2 justify-center text-white/80"
               >
-                <Check className="w-5 h-5 text-mint" />
+                <Check className="w-5 h-5 text-accent-green" />
                 <span className="text-sm">{benefit}</span>
               </div>
             ))}
@@ -90,14 +90,14 @@ export default function NewsletterCTA() {
             transition={{ delay: 0.2 }}
           >
             {isSubmitted ? (
-              <div className="bg-mint/20 border border-mint rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-8 h-8 text-green-600" />
+              <div className="bg-accent-green/10 border border-accent-green/20 rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 bg-accent-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-accent-green" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-white mb-2">
-                  You're In!
+                  You&apos;re In!
                 </h3>
-                <p className="text-white/80">
+                <p className="text-white/70">
                   Check your inbox for the download link. Welcome to the
                   Websuem community!
                 </p>
@@ -108,24 +108,24 @@ export default function NewsletterCTA() {
                 className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
               >
                 <div className="flex-1 relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-cream/50" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-white text-deep-purple placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-vibrant-yellow"
+                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/[0.05] text-warm-cream placeholder-muted-cream/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent"
                     disabled={isSubmitting}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-vibrant-yellow text-deep-purple font-semibold rounded-xl hover:shadow-glow transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-green text-deep-green font-semibold rounded-xl hover:bg-bright-green hover:shadow-glow transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-deep-purple/30 border-t-deep-purple rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-deep-green/30 border-t-deep-green rounded-full animate-spin" />
                       Sending...
                     </>
                   ) : (
@@ -142,7 +142,7 @@ export default function NewsletterCTA() {
               <p className="text-red-400 text-sm text-center mt-3">{error}</p>
             )}
 
-            <p className="text-white/50 text-xs text-center mt-4">
+            <p className="text-white/30 text-xs text-center mt-4">
               No spam, ever. Unsubscribe anytime.
             </p>
           </motion.div>

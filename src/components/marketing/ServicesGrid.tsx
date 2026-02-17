@@ -11,10 +11,7 @@ const services = [
     description:
       "Custom websites that convert visitors into customers. Mobile-first, blazing fast, SEO-ready.",
     icon: Globe,
-    color: "bg-sky",
-    iconColor: "text-blue-600",
     tag: "1-2 Week Delivery",
-    tagColor: "bg-mint text-green-700",
     size: "large",
     href: "/services#web",
   },
@@ -24,10 +21,7 @@ const services = [
     description:
       "Content that builds your brand and engages your audience.",
     icon: Smartphone,
-    color: "bg-soft-pink",
-    iconColor: "text-pink-600",
     tag: "Monthly Plans",
-    tagColor: "bg-soft-pink text-pink-700",
     size: "small",
     href: "/services#social",
   },
@@ -36,10 +30,7 @@ const services = [
     title: "AI Automation",
     description: "Save 10+ hours weekly with intelligent workflows.",
     icon: Zap,
-    color: "bg-vibrant-yellow/30",
-    iconColor: "text-yellow-700",
     tag: "Custom Solutions",
-    tagColor: "bg-vibrant-yellow text-deep-purple",
     size: "small",
     href: "/services#automation",
   },
@@ -48,10 +39,7 @@ const services = [
     title: "Brand Identity",
     description: "Logos, colors, and visual systems that resonate.",
     icon: Palette,
-    color: "bg-lavender",
-    iconColor: "text-purple-600",
     tag: "Full Package",
-    tagColor: "bg-lavender text-purple-700",
     size: "small",
     href: "/services#branding",
   },
@@ -77,38 +65,34 @@ const ServiceCard = ({
     >
       <Link href={service.href}>
         <div
-          className={`group relative bg-white p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg hover:-translate-y-2 transition-all duration-300 h-full ${
+          className={`group relative bg-white/[0.03] p-8 rounded-2xl border border-white/5 hover:border-accent-green/20 hover:-translate-y-1 transition-all duration-500 h-full ${
             isLarge ? "min-h-[400px]" : "min-h-[200px]"
           }`}
         >
           {/* Icon */}
-          <div
-            className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-6`}
-          >
-            <Icon className={`w-7 h-7 ${service.iconColor}`} />
+          <div className="w-14 h-14 bg-accent-green/10 rounded-xl flex items-center justify-center mb-6">
+            <Icon className="w-7 h-7 text-accent-green" />
           </div>
 
           {/* Tag */}
-          <span
-            className={`inline-block px-3 py-1 ${service.tagColor} text-xs font-medium rounded-full mb-4`}
-          >
+          <span className="inline-block px-3 py-1 bg-accent-green/10 text-accent-green text-xs font-medium rounded-full mb-4">
             {service.tag}
           </span>
 
           {/* Content */}
-          <h3 className="text-xl font-heading font-semibold text-deep-purple mb-3">
+          <h3 className="text-xl font-heading font-semibold text-white mb-3">
             {service.title}
           </h3>
-          <p className="text-gray-600 mb-6">{service.description}</p>
+          <p className="text-muted-cream mb-6">{service.description}</p>
 
           {/* Arrow */}
-          <div className="flex items-center gap-2 text-deep-purple font-medium group-hover:gap-3 transition-all duration-300">
+          <div className="flex items-center gap-2 text-accent-green font-medium group-hover:gap-3 transition-all duration-300">
             Learn more
             <ArrowRight className="w-4 h-4" />
           </div>
 
           {/* Hover gradient overlay */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-vibrant-yellow/0 to-vibrant-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-green/0 to-accent-green/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
       </Link>
     </motion.div>
@@ -117,7 +101,7 @@ const ServiceCard = ({
 
 const ServicesGrid = () => {
   return (
-    <section className="py-20 bg-cream">
+    <section className="py-20 bg-dark-navy">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -126,13 +110,13 @@ const ServicesGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+          <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
             What We Do
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-2 mb-4">
             A web agency designed for growth
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-cream max-w-2xl mx-auto">
             Built to help you stand out, convert visitors, and save time with
             the power of AI.
           </p>
@@ -149,38 +133,8 @@ const ServicesGrid = () => {
             <ServiceCard service={services[2]} index={2} />
           </div>
 
-          {/* Brand Identity + Stats Card */}
-          <div className="space-y-6">
-            <ServiceCard service={services[3]} index={3} />
-
-            {/* Stats mini card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="bg-deep-purple p-8 rounded-2xl text-white"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-3xl font-bold text-vibrant-yellow">50+</p>
-                  <p className="text-white/70 text-sm">Projects</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-vibrant-yellow">12+</p>
-                  <p className="text-white/70 text-sm">Countries</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-vibrant-yellow">&lt;7</p>
-                  <p className="text-white/70 text-sm">Day Delivery</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-vibrant-yellow">100%</p>
-                  <p className="text-white/70 text-sm">Satisfaction</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Brand Identity */}
+          <ServiceCard service={services[3]} index={3} />
         </div>
       </div>
     </section>

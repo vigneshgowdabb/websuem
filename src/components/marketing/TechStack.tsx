@@ -19,7 +19,7 @@ const technologies = [
 
 const TechStack = () => {
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-16 bg-dark-navy overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -28,7 +28,7 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500 text-sm uppercase tracking-wider font-medium">
+          <p className="text-muted-cream text-sm uppercase tracking-wider font-medium">
             Powered by modern technology
           </p>
         </motion.div>
@@ -36,8 +36,8 @@ const TechStack = () => {
         {/* Marquee Container */}
         <div className="relative">
           {/* Gradient Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark-navy to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark-navy to-transparent z-10" />
 
           {/* Scrolling Logos */}
           <div className="flex overflow-hidden">
@@ -57,14 +57,14 @@ const TechStack = () => {
               {[...technologies, ...technologies].map((tech, index) => (
                 <div
                   key={`${tech.name}-${index}`}
-                  className="flex items-center gap-3 px-6 py-3 bg-gray-50 rounded-full whitespace-nowrap hover:bg-lavender transition-colors duration-300"
+                  className="flex items-center gap-3 px-6 py-3 bg-white/[0.03] rounded-full whitespace-nowrap hover:bg-white/[0.06] border border-white/5 transition-colors duration-300"
                 >
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                    <span className="text-deep-purple font-bold text-xs">
+                  <div className="w-8 h-8 bg-white/[0.08] rounded-lg flex items-center justify-center">
+                    <span className="text-accent-green font-bold text-xs">
                       {tech.name.charAt(0)}
                     </span>
                   </div>
-                  <span className="text-deep-purple font-medium">{tech.name}</span>
+                  <span className="text-warm-cream font-medium">{tech.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -73,7 +73,7 @@ const TechStack = () => {
 
         {/* Bottom text */}
         <motion.p
-          className="text-center text-gray-400 text-sm mt-8"
+          className="text-center text-muted-cream/60 text-sm mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -24,18 +24,29 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Custom colors */
-  --color-lavender: #F5F0FF;
-  --color-cream: #FFFBF5;
+  /* Dark premium colors */
+  --color-deep-green: #021A0A;
+  --color-dark-navy: #0A1628;
+  --color-forest: #0D2818;
+  --color-dark-surface: #111827;
+  --color-accent-green: #4ADE80;
+  --color-bright-green: #22C55E;
+  --color-gold: #F59E0B;
+  --color-warm-cream: #F5F0E8;
+  --color-muted-cream: #A3A08E;
+
+  /* Legacy colors (for CRM pages) */
   --color-deep-purple: #1A1235;
   --color-vibrant-yellow: #FFD84D;
+  --color-lavender: #F5F0FF;
+  --color-cream: #FFFBF5;
   --color-warm-orange: #FF8A4C;
   --color-soft-pink: #FFE4E6;
   --color-mint: #D1FAE5;
   --color-sky: #DBEAFE;
 
   /* Fonts */
-  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-heading: var(--font-playfair), Georgia, serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
 
   /* Radius */
@@ -46,38 +57,37 @@
   --radius-2xl: calc(var(--radius) + 8px);
 
   /* Custom shadows */
-  --shadow-glow: 0 4px 20px rgba(255, 216, 77, 0.4);
-  --shadow-glow-lg: 0 8px 40px rgba(255, 216, 77, 0.3);
-  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-soft-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 4px 20px rgba(74, 222, 128, 0.3);
+  --shadow-glow-lg: 0 8px 40px rgba(74, 222, 128, 0.2);
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-soft-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
 
   /* Custom animations */
   --animate-fade-up: fadeUp 0.6s ease-out forwards;
   --animate-fade-in: fadeIn 0.4s ease-out forwards;
-  --animate-float: float 4s ease-in-out infinite;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(240 10% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(240 10% 10%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(240 10% 10%);
-  --primary: #FFD84D;
-  --primary-foreground: #1A1235;
-  --secondary: #F5F0FF;
-  --secondary-foreground: #1A1235;
-  --muted: #F5F0FF;
-  --muted-foreground: #6B7280;
-  --accent: #FF8A4C;
-  --accent-foreground: #FFFFFF;
+  --background: #021A0A;
+  --foreground: #F5F0E8;
+  --card: #0D2818;
+  --card-foreground: #F5F0E8;
+  --popover: #0D2818;
+  --popover-foreground: #F5F0E8;
+  --primary: #22C55E;
+  --primary-foreground: #021A0A;
+  --secondary: #0A1628;
+  --secondary-foreground: #F5F0E8;
+  --muted: #111827;
+  --muted-foreground: #A3A08E;
+  --accent: #F59E0B;
+  --accent-foreground: #021A0A;
   --destructive: hsl(0 84% 60%);
   --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(240 6% 90%);
-  --input: hsl(240 6% 90%);
-  --ring: #FFD84D;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #4ADE80;
 }
 
 @layer base {
@@ -99,8 +109,8 @@ html {
 
 /* Custom selection color */
 ::selection {
-  background-color: #FFD84D;
-  color: #1A1235;
+  background-color: #4ADE80;
+  color: #021A0A;
 }
 
 /* Keyframes */
@@ -112,11 +122,6 @@ html {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
 }
 
 /* Reduced motion support */

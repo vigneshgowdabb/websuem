@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
   images: {
     remotePatterns: [
@@ -10,6 +9,25 @@ const nextConfig: NextConfig = {
         hostname: "**",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/:slug",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/pricing",
+        destination: "/contact",
+        permanent: true,
+      },
+    ];
   },
 };
 

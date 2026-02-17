@@ -9,7 +9,6 @@ interface StatProps {
   suffix?: string;
   label: string;
   icon: React.ReactNode;
-  color: string;
 }
 
 const CountUpNumber = ({
@@ -44,27 +43,30 @@ const CountUpNumber = ({
     }
   }, [isInView, value]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
 };
 
-const StatCard = ({ value, suffix, label, icon, color }: StatProps) => {
+const StatCard = ({ value, suffix, label, icon }: StatProps) => {
   return (
     <motion.div
-      className="relative bg-white p-8 rounded-2xl shadow-soft border border-gray-100 hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300"
+      className="relative bg-white/[0.03] backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent-green/20 transition-all duration-300"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div
-        className={`w-14 h-14 ${color} rounded-xl flex items-center justify-center mb-4`}
-      >
+      <div className="w-14 h-14 bg-accent-green/10 rounded-xl flex items-center justify-center mb-4">
         {icon}
       </div>
-      <p className="text-4xl md:text-5xl font-heading font-bold text-deep-purple mb-2">
+      <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">
         <CountUpNumber value={value} suffix={suffix} />
       </p>
-      <p className="text-gray-600">{label}</p>
+      <p className="text-muted-cream">{label}</p>
     </motion.div>
   );
 };
@@ -75,34 +77,30 @@ const StatsSection = () => {
       value: 50,
       suffix: "+",
       label: "Projects Delivered",
-      icon: <TrendingUp className="w-6 h-6 text-green-600" />,
-      color: "bg-mint",
+      icon: <TrendingUp className="w-6 h-6 text-accent-green" />,
     },
     {
       value: 12,
       suffix: "+",
       label: "Countries Served",
-      icon: <Globe className="w-6 h-6 text-blue-600" />,
-      color: "bg-sky",
+      icon: <Globe className="w-6 h-6 text-accent-green" />,
     },
     {
       value: 7,
       suffix: " Days",
       label: "Average Delivery",
-      icon: <Clock className="w-6 h-6 text-orange-600" />,
-      color: "bg-soft-pink",
+      icon: <Clock className="w-6 h-6 text-accent-green" />,
     },
     {
       value: 100,
       suffix: "%",
       label: "Client Satisfaction",
-      icon: <ThumbsUp className="w-6 h-6 text-yellow-600" />,
-      color: "bg-vibrant-yellow/30",
+      icon: <ThumbsUp className="w-6 h-6 text-accent-green" />,
     },
   ];
 
   return (
-    <section className="py-20 bg-lavender">
+    <section className="py-20 bg-dark-navy border-y border-white/5">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-12"
@@ -110,10 +108,10 @@ const StatsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-sm font-semibold text-warm-orange uppercase tracking-wider">
+          <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
             Our Impact
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-deep-purple mt-2">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3">
             Achieving Superior Results
           </h2>
         </motion.div>

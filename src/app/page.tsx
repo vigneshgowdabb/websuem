@@ -4,7 +4,6 @@ import TechStack from "@/components/marketing/TechStack";
 import ServicesGrid from "@/components/marketing/ServicesGrid";
 import StatsSection from "@/components/marketing/StatsSection";
 import ProcessPreview from "@/components/marketing/ProcessPreview";
-import PortfolioPreview from "@/components/marketing/PortfolioPreview";
 import Testimonials from "@/components/marketing/Testimonials";
 import NewsletterCTA from "@/components/marketing/NewsletterCTA";
 import FinalCTA from "@/components/marketing/FinalCTA";
@@ -21,7 +20,6 @@ export default function Home() {
         <ServicesGrid />
         <StatsSection />
         <ProcessPreview />
-        <PortfolioPreview />
         <Testimonials />
         <NewsletterCTA />
         <FinalCTA />
