@@ -10,20 +10,9 @@ import {
   Zap,
   Target,
   Shield,
-  Clock,
   CheckCircle,
-  Globe,
   Code,
-  Palette,
-  Bot,
 } from "lucide-react";
-
-const stats = [
-  { label: "Projects Completed", value: "50+", icon: CheckCircle },
-  { label: "Happy Clients", value: "40+", icon: Award },
-  { label: "Countries Served", value: "12", icon: Globe },
-  { label: "Avg. Delivery Time", value: "14 days", icon: Clock },
-];
 
 const values = [
   {
@@ -56,23 +45,9 @@ const teamMembers = [
   {
     name: "Vignesh Gowda",
     role: "Founder & Lead Developer",
-    bio: "Full-stack developer with 5+ years of experience building scalable web applications. Passionate about leveraging AI to deliver exceptional results faster.",
+    bio: "Full-stack developer passionate about leveraging AI to deliver exceptional results faster. I work directly with every client — no account managers, no middlemen. You get the person building your project.",
     expertise: ["Next.js", "React", "Node.js", "AI Integration"],
     icon: Code,
-  },
-  {
-    name: "Creative Team",
-    role: "Design & Branding",
-    bio: "Our design team brings brands to life with stunning visuals, cohesive identity systems, and user-centered interfaces that convert.",
-    expertise: ["UI/UX Design", "Brand Identity", "Motion Graphics", "Figma"],
-    icon: Palette,
-  },
-  {
-    name: "Automation Specialists",
-    role: "AI & Workflow Automation",
-    bio: "We harness the power of AI and automation tools to streamline processes, reduce manual work, and help businesses scale efficiently.",
-    expertise: ["Claude AI", "Make.com", "Zapier", "Custom Integrations"],
-    icon: Bot,
   },
 ];
 
@@ -85,7 +60,7 @@ const milestones = [
   },
   {
     year: "2024",
-    title: "First 10 Clients",
+    title: "First Clients",
     description:
       "Delivered successful projects across web development, branding, and automation.",
   },
@@ -97,9 +72,9 @@ const milestones = [
   },
   {
     year: "2025",
-    title: "Growing Impact",
+    title: "Growing & Evolving",
     description:
-      "Now serving clients in 12+ countries with 50+ projects completed.",
+      "Continuously refining our AI-enhanced workflow to deliver even better results, faster.",
   },
 ];
 
@@ -120,9 +95,9 @@ const whyChooseUs = [
       "Know exactly what you're paying upfront. No surprise invoices or scope creep charges.",
   },
   {
-    title: "Proven Results",
+    title: "Quality You Can See",
     description:
-      "Our case studies show real metrics: 40%+ conversion improvements, 300%+ traffic increases, $120K+ cost savings.",
+      "Every project is built with clean code, modern frameworks, and meticulous attention to detail. The results speak for themselves.",
   },
 ];
 
@@ -149,41 +124,15 @@ export default function AboutPage() {
                 About Us
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-                We Build Digital Experiences That{" "}
-                <span className="text-accent-green">Drive Growth</span>
+                One Developer.{" "}
+                <span className="text-accent-green">Zero Compromises.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-cream max-w-2xl mx-auto leading-relaxed">
-                An AI-powered agency on a mission to democratize premium web
-                services. Quality first, speed second, affordability third.
+                I&apos;m Vignesh Gowda — a solo developer using AI-powered
+                workflows to deliver agency-quality websites at startup speed.
+                Quality first, speed second, affordability third.
               </p>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 bg-dark-navy border-y border-white/5">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <Icon className="w-8 h-8 text-accent-green mx-auto mb-3" />
-                    <p className="text-3xl md:text-4xl font-heading font-bold text-white">
-                      {stat.value}
-                    </p>
-                    <p className="text-sm text-muted-cream mt-1">{stat.label}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
           </div>
         </section>
 
@@ -200,7 +149,7 @@ export default function AboutPage() {
                   Our Story
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-8">
-                  Why We Started Websuem
+                  Why I Started Websuem
                 </h2>
                 <div className="space-y-5 text-muted-cream leading-relaxed">
                   <p>
@@ -210,16 +159,16 @@ export default function AboutPage() {
                     finding reliable talent is a gamble.
                   </p>
                   <p>
-                    We saw an opportunity to bridge this gap. By leveraging AI
+                    I saw an opportunity to bridge this gap. By leveraging AI
                     to handle repetitive tasks — research, initial drafts, code
-                    boilerplates — we free ourselves to focus on what truly
+                    boilerplates — I free up time to focus on what truly
                     matters: creativity, strategy, and delivering exceptional
                     results.
                   </p>
                   <p>
                     The result? Agency-level quality at freelancer prices,
                     delivered in days instead of months. That&apos;s not a marketing
-                    gimmick — it&apos;s our operating model.
+                    gimmick — it&apos;s how I operate.
                   </p>
                 </div>
               </motion.div>
@@ -317,18 +266,18 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <span className="text-sm font-semibold text-accent-green uppercase tracking-wider">
-                Meet The Team
+                Meet The Founder
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mt-3 mb-4">
-                The People Behind Websuem
+                The Person Behind Websuem
               </h2>
               <p className="text-muted-cream max-w-2xl mx-auto">
-                A lean, focused team of specialists dedicated to delivering
-                exceptional results.
+                When you hire Websuem, you work directly with me — the person
+                designing, building, and launching your project.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid gap-8 max-w-lg mx-auto">
               {teamMembers.map((member, index) => {
                 const Icon = member.icon;
                 return (

@@ -51,11 +51,6 @@ export function WebsiteSchema() {
         url: "https://websuem.com/logo.png",
       },
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://websuem.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (
@@ -82,11 +77,6 @@ export function LocalBusinessSchema() {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "09:00",
       closes: "18:00",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "47",
     },
   };
 

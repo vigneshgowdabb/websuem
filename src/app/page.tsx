@@ -2,9 +2,7 @@ import { Header } from "@/components/marketing/Header";
 import Hero from "@/components/marketing/Hero";
 import TechStack from "@/components/marketing/TechStack";
 import ServicesGrid from "@/components/marketing/ServicesGrid";
-import StatsSection from "@/components/marketing/StatsSection";
 import ProcessPreview from "@/components/marketing/ProcessPreview";
-import Testimonials from "@/components/marketing/Testimonials";
 import NewsletterCTA from "@/components/marketing/NewsletterCTA";
 import FinalCTA from "@/components/marketing/FinalCTA";
 import { Footer } from "@/components/marketing/Footer";
@@ -18,9 +16,7 @@ export default function Home() {
         <Hero />
         <TechStack />
         <ServicesGrid />
-        <StatsSection />
         <ProcessPreview />
-        <Testimonials />
         <NewsletterCTA />
         <FinalCTA />
       </main>

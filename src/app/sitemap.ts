@@ -19,12 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/portfolio`,
-            lastModified: currentDate,
-            changeFrequency: 'weekly' as const,
-            priority: 0.9,
-        },
-        {
             url: `${baseUrl}/pricing`,
             lastModified: currentDate,
             changeFrequency: 'weekly' as const,
@@ -71,14 +65,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }))
 
-    // Portfolio/Case study pages
-    const projects = ['lumina', 'vortex', 'elevate', 'nimbus']
-    const portfolioPages = projects.map((project) => ({
-        url: `${baseUrl}/portfolio/${project}`,
-        lastModified: currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }))
-
-    return [...staticPages, ...servicePages, ...portfolioPages]
+    return [...staticPages, ...servicePages]
 }

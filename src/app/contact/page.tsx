@@ -86,7 +86,7 @@ export default function ContactPage() {
                         Location
                       </h3>
                       <p className="text-muted-cream">
-                        Remote-first, serving clients in 12+ countries
+                        Remote-first, serving clients worldwide
                       </p>
                     </div>
                   </div>
