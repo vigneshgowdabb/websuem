@@ -1,0 +1,50 @@
+{
+  "node": {
+    "00a4ce2567047e42acb948aff9699469e26b0fd8a6": {
+      "workers": {
+        "app/admin/invoices/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/invoices/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/invoices.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/admin/invoices/page": "action-browser"
+      },
+      "exportedName": "signOut",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "40d1d3017ce7b8136a6a2a2ad6337d48a9c54ce0bb": {
+      "workers": {
+        "app/admin/invoices/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/invoices/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/invoices.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createInvoice",
+          "filename": "src/app/actions/invoices.ts"
+        }
+      },
+      "layer": {
+        "app/admin/invoices/page": "action-browser"
+      },
+      "exportedName": "createInvoice",
+      "filename": "src/app/actions/invoices.ts"
+    },
+    "6075ec2649ec6f84372305cf531598f9674ed54352": {
+      "workers": {
+        "app/admin/invoices/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/invoices/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/invoices.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateInvoiceStatus",
+          "filename": "src/app/actions/invoices.ts"
+        }
+      },
+      "layer": {
+        "app/admin/invoices/page": "action-browser"
+      },
+      "exportedName": "updateInvoiceStatus",
+      "filename": "src/app/actions/invoices.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/admin/invoices/page": "app/admin/invoices/page.js",
+  "/admin/leads/page": "app/admin/leads/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/projects/page": "app/admin/projects/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/cookies/page": "app/cookies/page.js",
+  "/legal/page": "app/legal/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/portal/deliverables/page": "app/portal/deliverables/page.js",
+  "/portal/invoices/page": "app/portal/invoices/page.js",
+  "/portal/page": "app/portal/page.js",
+  "/portal/projects/page": "app/portal/projects/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/services/page": "app/services/page.js",
+  "/signup/page": "app/signup/page.js"
+}

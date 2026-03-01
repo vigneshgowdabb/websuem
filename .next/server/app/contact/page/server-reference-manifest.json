@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6064295c4ab265e366882bc7edbfb4af37cbddfd7f": {
+      "workers": {
+        "app/contact/page": {
+          "moduleId": 53548,
+          "async": false,
+          "exportedName": "createLead",
+          "filename": "src/app/actions/leads.ts"
+        }
+      },
+      "layer": {
+        "app/contact/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/app/actions/leads.ts"
+    }
+  },
+  "edge": {}
+}

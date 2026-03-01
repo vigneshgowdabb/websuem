@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/a2dfb6fc5208ab9b.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"buildId":"_nJM6JXANLKtTKGr-4w-Q","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"max-w-6xl","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold text-foreground tracking-tight","children":"Manage Leads"}],["$","p",null,{"className":"text-foreground/50 text-sm mt-1","children":"Track and manage new inquiries and potential clients."}]]}],["$","div",null,{"className":"p-12 rounded-3xl bg-surface border border-border text-center","children":[["$","div",null,{"className":"text-foreground/40 mb-4","children":"👥"}],["$","h3",null,{"className":"text-lg font-bold text-foreground mb-2","children":"No new leads"}],["$","p",null,{"className":"text-sm text-foreground/50","children":"Incoming contact requests will appear in your pipeline here."}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
+4:null

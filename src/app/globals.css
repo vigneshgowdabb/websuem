@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Bodoni Moda", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-primary: #D4AF37; /* Champagne Gold */
+  --color-accent: var(--foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+}
+
+@layer base {
+  :root {
+    --background: #FDFDFD;
+    --foreground: #050505;
+    --surface: #F5F5F5;
+    --border: rgba(5, 5, 5, 0.1);
+  }
+
+  .dark {
+    --background: #050505;
+    --foreground: #FDFDFD;
+    --surface: #0D0D0D;
+    --border: rgba(253, 253, 253, 0.1);
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans transition-colors duration-500;
+  }
+  h1, h2, h3, h4, .font-serif {
+    @apply font-serif;
+  }
+}
+
+/* Custom selection colors */
+::selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+}
+
+/* Smooth Scroll (Lenis) recommended styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Luxury Transitions */
+.reveal-mask {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.reveal-mask.active {
+  clip-path: inset(0 0 0% 0);
+}

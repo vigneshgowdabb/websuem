@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00bf4c2d6f5f3ead40000193cc51fb2782ae6cfe53": {
+      "workers": {
+        "app/admin/projects/page": {
+          "moduleId": 19580,
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/page": "action-browser"
+      },
+      "exportedName": "signOut",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "40f956a1e1796d5805b26b04ddc0a14339f9c920c2": {
+      "workers": {
+        "app/admin/projects/page": {
+          "moduleId": 19580,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "src/app/actions/projects.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/page": "action-browser"
+      },
+      "exportedName": "createProject",
+      "filename": "src/app/actions/projects.ts"
+    },
+    "7093b6e7fa045bb9a8551e0190d9a9ffe9aa6f4f42": {
+      "workers": {
+        "app/admin/projects/page": {
+          "moduleId": 19580,
+          "async": false,
+          "exportedName": "updateProjectStatus",
+          "filename": "src/app/actions/projects.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/page": "action-browser"
+      },
+      "exportedName": "updateProjectStatus",
+      "filename": "src/app/actions/projects.ts"
+    },
+    "40e47c1c4b6342cfc3e0805a66c9268d967dd8a020": {
+      "workers": {
+        "app/admin/projects/page": {
+          "moduleId": 19580,
+          "async": false,
+          "exportedName": "addDeliverable",
+          "filename": "src/app/actions/projects.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/page": "action-browser"
+      },
+      "exportedName": "addDeliverable",
+      "filename": "src/app/actions/projects.ts"
+    }
+  },
+  "edge": {}
+}
