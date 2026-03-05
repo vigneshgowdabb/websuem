@@ -33,6 +33,7 @@ export default function Home() {
           </SectionReveal>
 
           <h1 className='text-6xl sm:text-[9vw] font-serif font-light leading-[0.85] tracking-tighter text-foreground mb-12'>
+            <span className="sr-only">Websuem: Next-Gen Web Design and AI Agency. </span>
             <TextReveal text="Designing" delay={0.1} />
             <span className='italic font-light opacity-80'>
               <TextReveal text="Intelligence" delay={0.2} />

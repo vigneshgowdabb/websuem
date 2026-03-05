@@ -1,0 +1,16 @@
+module.exports=[53548,a=>{"use strict";var b=a.i(37936),c=a.i(22176),d=a.i(53112),e=a.i(13095);let f=d.z.object({name:d.z.string().min(2,"Name must be at least 2 characters"),email:d.z.string().email("Invalid email address"),service_interest:d.z.enum(["Web Development","AI Automation","Brand Identity","Other"]),message:d.z.string().min(10,"Message must be at least 10 characters")});async function g(b,d){let e={name:d.get("name"),email:d.get("email"),service_interest:d.get("service_interest"),message:d.get("message")},g=f.safeParse(e);if(!g.success)return{success:!1,message:g.error.flatten().fieldErrors.name?.[0]||g.error.flatten().fieldErrors.email?.[0]||g.error.flatten().fieldErrors.message?.[0]||"Invalid form data"};let{name:h,email:i,service_interest:j,message:k}=g.data;try{let b=await (0,c.createClient)(),{error:d}=await b.from("leads").insert([{name:h,email:i,service_interest:j,message:k,status:"new"}]);if(d)return console.error("Supabase error:",d),{success:!1,message:"Failed to submit request. Please try again."};try{let{exec:b}=await a.A(44264),c=`[LEAD_ALERT] New prospect: ${h} (${i}) interested in ${j}`;b(`npx @claude-flow/cli@v3alpha hive-mind notify --message "${c}" --priority high`)}catch(a){console.error("Swarm notification failed:",a)}try{let{Resend:b}=await a.A(86473),c=new b(process.env.RESEND_API_KEY);await c.emails.send({from:"Websuem | New Lead <onboarding@resend.dev>",to:"hello@websuem.com",subject:`🚀 New Lead: ${h} (${j})`,html:`
+          <div style="font-family: sans-serif; padding: 20px; background: #0A0A0A; color: #fff; border-radius: 12px;">
+            <h2 style="color: #2563EB;">New Websuem Lead</h2>
+            <p><strong>Name:</strong> ${h}</p>
+            <p><strong>Email:</strong> ${i}</p>
+            <p><strong>Interest:</strong> ${j}</p>
+            <p><strong>Message:</strong></p>
+            <div style="background: #111; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+              ${k}
+            </div>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;" />
+            <p style="font-size: 12px; color: #666;">View this lead in the CRM: <a href="http://websuem.com/admin" style="color: #2563EB;">websuem.com/admin</a></p>
+          </div>
+        `})}catch(a){console.error("Email notification failed:",a)}return{success:!0,message:"Your message has been received! We'll be in touch shortly."}}catch(a){return console.error("Submission error:",a),{success:!1,message:"An unexpected error occurred."}}}(0,e.ensureServerEntryExports)([g]),(0,b.registerServerReference)(g,"6064295c4ab265e366882bc7edbfb4af37cbddfd7f",null),a.s([],12419),a.i(12419),a.s(["6064295c4ab265e366882bc7edbfb4af37cbddfd7f",()=>g],53548)},44264,a=>{a.v(b=>Promise.all(["server/chunks/ssr/[externals]_child_process_964038fc._.js"].map(b=>a.l(b))).then(()=>b(33405)))},86473,a=>{a.v(b=>Promise.all(["server/chunks/ssr/[root-of-the-server]__792984cd._.js"].map(b=>a.l(b))).then(()=>b(45069)))}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__9f284d7f._.js.map

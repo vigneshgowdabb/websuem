@@ -1,0 +1,3 @@
+module.exports=[44222,a=>{"use strict";var b=a.i(7997);function c({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}a.s(["default",()=>c,"metadata",0,{title:"Services",description:"Explore Websuem's digital expertise in web development, AI automation, and high-performance ecosystems.",openGraph:{title:"Services | Websuem",description:"Explore Websuem's digital expertise in web development, AI automation, and high-performance ecosystems.",url:"https://websuem.com/services"}}])}];
+
+//# sourceMappingURL=src_app_services_layout_tsx_8b538cd9._.js.map

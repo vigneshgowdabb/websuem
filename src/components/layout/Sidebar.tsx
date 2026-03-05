@@ -41,8 +41,8 @@ export default function Sidebar({ role }: SidebarProps) {
       {/* Sidebar Header */}
       <div className='p-6 flex items-center gap-3 border-b border-border min-h-[80px]'>
         <Link href='/' className='relative h-8 w-32 block'>
-          <Image src="/images/Logo1.png" alt="Websuem Logo" fill className="object-contain object-left mix-blend-screen invert hidden dark:block" />
-          <Image src="/images/Logo1.png" alt="Websuem Logo" fill className="object-contain object-left mix-blend-multiply block dark:hidden" />
+          <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-screen invert hidden dark:block" />
+          <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-multiply block dark:hidden" />
         </Link>
       </div>
 

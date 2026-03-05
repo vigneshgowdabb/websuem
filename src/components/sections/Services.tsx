@@ -10,7 +10,7 @@ const services = [
   {
     id: '01',
     title: 'Digital Architecture',
-    description: 'Engineering bespoke web ecosystems that balance extreme performance with aesthetic perfection. We specialize in Next.js and high-speed cloud infrastructure.',
+    description: 'Engineering bespoke web ecosystems that balance extreme performance with aesthetic perfection. At Websuem, our core philosophy revolves around creating robust, scalable, and lightning-fast digital solutions tailored for ambitious startups. We specialize in leveraging Next.js and high-speed cloud infrastructure to ensure your platform not only looks stunning but operates flawlessly under heavy traffic. From headless commerce solutions to custom web applications, our digital architecture services lay the unbreakable foundation your brand needs to scale globally. We ensure Lighthouse 100 performance scores across all critical metrics, combining clean code with state-of-the-art deployment pipelines to give you an unparalleled competitive edge in the digital arena.',
     details: [
       'Next.js 15 & React 19 Implementation',
       'Performance Optimization (Lighthouse 100)',
@@ -22,7 +22,7 @@ const services = [
   {
     id: '02',
     title: 'Intelligent Automation',
-    description: 'Harnessing the power of Large Language Models to streamline agency workflows and reduce operational friction by up to 80%.',
+    description: 'We harness the transformative power of Large Language Models (LLMs) and advanced AI systems to streamline agency workflows, reduce operational friction by up to 80%, and supercharge your team’s productivity. Our intelligent automation services seamlessly integrate AI directly into your business processes, creating autonomous agents capable of handling complex logic, data-driven decision-making, and round-the-clock customer interactions. By connecting external APIs and orchestrating workflow automation tools like Zapier or n8n, we build smart infrastructures that learn and adapt. The result is a highly efficient operational ecosystem where AI handles repetitive friction, allowing your human talent to focus exclusively on high-level strategy and creative execution.',
     details: [
       'Custom LLM Integration',
       'Autonomous Agent Development',
@@ -34,7 +34,7 @@ const services = [
   {
     id: '03',
     title: 'Visual Alchemy',
-    description: 'Forging brand identities that resonate in the digital age. We create visual systems that communicate authority and premium quality.',
+    description: 'Forging brand identities that resonate deeply in the modern digital age requires more than just a logo—it demands a holistic visual system. Our visual alchemy services create striking, premium interfaces that communicate unshakeable authority and unparalleled quality from the very first interaction. We meticulously design user experiences and user interfaces (UX/UI) that guide visitors through an intuitive, emotionally engaging journey. Incorporating high-end 3D visuals, sophisticated typography, and fluid motion design, we sculpt digital environments that leave a lasting impression. From the initial strategic prototyping to the final polished implementation, we ensure your brand’s visual narrative perfectly aligns with its technological excellence.',
     details: [
       'Brand Identity Design',
       'Motion & Interaction Design',
@@ -137,6 +137,7 @@ export default function Services() {
                             src={service.image}
                             alt={service.title}
                             fill
+                            priority
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             className='object-cover scale-110 hover:scale-100 transition-transform duration-[2s]'
                           />

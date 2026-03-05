@@ -7,13 +7,60 @@ import { ThemeProvider } from '@/components/theme-provider';
 import QueryProvider from '@/components/providers/QueryProvider';
 
 export const metadata: Metadata = {
-  title: 'Websuem | Next-Gen AI Agency',
-  description: 'High-end design and intelligent code, delivered in days. The premium choice for modern startups.'
+  title: {
+    default: 'Websuem | Next-Gen AI & Web Design Agency',
+    template: '%s | Websuem'
+  },
+  description: 'Websuem is a next-gen digital studio building high-performance ecosystems for founders who demand excellence without compromise.',
+  openGraph: {
+    title: 'Websuem | Next-Gen AI & Web Design Agency',
+    description: 'High-end design and intelligent code, delivered in days. The premium choice for modern startups.',
+    url: 'https://websuem.com',
+    siteName: 'Websuem',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Websuem | Next-Gen AI & Web Design Agency',
+    description: 'High-end design and intelligent code, delivered in days. The premium choice for modern startups.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Websuem',
+  url: 'https://websuem.com',
+  logo: 'https://websuem.com/logo.png',
+  description: 'Websuem is a next-gen digital studio building high-performance ecosystems.',
+  sameAs: [
+    'https://twitter.com/websuem',
+    'https://www.linkedin.com/company/websuem',
+    'https://www.instagram.com/websuem'
+  ]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning className='scroll-smooth'>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className='bg-background text-foreground antialiased selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans transition-colors duration-500'>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <CustomCursor />

@@ -62,10 +62,10 @@ export default function Navbar() {
       <div className='max-w-[1800px] mx-auto px-6 sm:px-12 flex items-center justify-between'>
         <Link href='/' className='group flex items-center gap-3'>
           <div className="relative h-8 w-32 hidden dark:block">
-            <Image src="/images/Logo1.png" alt="Websuem Logo" fill className="object-contain object-left mix-blend-screen invert" />
+            <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-screen invert" />
           </div>
           <div className="relative h-8 w-32 block dark:hidden">
-            <Image src="/images/Logo1.png" alt="Websuem Logo" fill className="object-contain object-left mix-blend-multiply" />
+            <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-multiply" />
           </div>
         </Link>
 

@@ -18,6 +18,7 @@ export default function ServicesPage() {
           <SectionReveal>
             <h2 className='text-xs font-sans font-bold uppercase tracking-[0.4em] text-[#D4AF37] mb-12'>Prestations</h2>
             <h1 className='text-6xl sm:text-[8vw] font-serif font-light leading-[0.9] tracking-tighter text-foreground mb-16'>
+              <span className="sr-only">Web Design, AI Automation, and Branding Services. </span>
               Our Digital <br />
               <span className='italic opacity-60'>Expertise.</span>
             </h1>
