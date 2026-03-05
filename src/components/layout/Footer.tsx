@@ -11,10 +11,10 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-4 gap-16 mb-24 relative z-10'>
           <div className='md:col-span-2'>
             <div className="relative h-12 w-48 hidden dark:block">
-              <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-screen invert" />
+              <Image src="/images/logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-screen invert" />
             </div>
             <div className="relative h-12 w-48 block dark:hidden">
-              <Image src="/images/Logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-multiply" />
+              <Image src="/images/logo1.png" alt="Websuem Logo" fill priority className="object-contain object-left mix-blend-multiply" />
             </div>
             <p className='mt-8 text-foreground/60 max-w-sm font-sans text-sm leading-relaxed'>
               The premier digital studio for the next generation of founders.
