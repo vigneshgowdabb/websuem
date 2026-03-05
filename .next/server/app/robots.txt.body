@@ -1,7 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /portal/
-Disallow: /login
-
-Sitemap: https://websuem.com/sitemap.xml

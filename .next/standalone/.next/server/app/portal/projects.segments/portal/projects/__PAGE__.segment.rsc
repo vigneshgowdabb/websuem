@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/a2dfb6fc5208ab9b.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"buildId":"4QWxtsAOWrdv4SsHnnfOA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"max-w-6xl","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold text-foreground tracking-tight","children":"My Projects"}],["$","p",null,{"className":"text-foreground/50 text-sm mt-1","children":"View and track the status of your active projects."}]]}],["$","div",null,{"className":"p-12 rounded-3xl bg-surface border border-border text-center","children":[["$","div",null,{"className":"text-foreground/40 mb-4","children":"🗂️"}],["$","h3",null,{"className":"text-lg font-bold text-foreground mb-2","children":"No active projects"}],["$","p",null,{"className":"text-sm text-foreground/50","children":"You don't have any ongoing projects at the moment."}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
-4:null
