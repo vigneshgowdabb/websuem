@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Services',
     description: 'Explore Websuem\'s digital expertise in web development, AI automation, and high-performance ecosystems.',
+    alternates: {
+        canonical: '/services',
+    },
     openGraph: {
         title: 'Services | Websuem',
         description: 'Explore Websuem\'s digital expertise in web development, AI automation, and high-performance ecosystems.',
